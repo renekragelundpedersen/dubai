@@ -1,0 +1,27 @@
+# Adjust Operators
+ALTER TABLE `prefix_users` CHANGE `password` `password` VARCHAR( 128 ) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;
+
+# Adjust Settings
+DELETE FROM `prefix_settings` WHERE `prefix_settings`.`name` = 'OperatorSmilies' LIMIT 1;
+DELETE FROM `prefix_settings` WHERE `prefix_settings`.`name` = 'SMTP' LIMIT 1;
+DELETE FROM `prefix_settings` WHERE `prefix_settings`.`name` = 'SMTPServer' LIMIT 1;
+DELETE FROM `prefix_settings` WHERE `prefix_settings`.`name` = 'SMTPPort' LIMIT 1;
+DELETE FROM `prefix_settings` WHERE `prefix_settings`.`name` = 'SMTPEmail' LIMIT 1;
+UPDATE `prefix_settings` SET `name` =  'Smilies' WHERE `prefix_settings`.`name` = 'GuestSmilies' LIMIT 1;
+INSERT INTO `prefix_settings` (`name`, `value`) VALUES ('TranscriptVisitorAlerts', '-1');
+INSERT INTO `prefix_settings` (`name`, `value`) VALUES ('OperatorVersion', '3.28');
+INSERT INTO `prefix_settings` (`name`, `value`) VALUES ('VisitorTracking', '-1');
+
+# Adjust Settings Keys
+ALTER TABLE `prefix_settings` DROP `id`;
+ALTER TABLE `prefix_settings` ADD PRIMARY KEY (`name`);
+
+# Adjust Responses
+ALTER TABLE `prefix_responses` ADD `name` TEXT CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL AFTER `id`;
+ALTER TABLE `prefix_responses` ADD `category` TEXT CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL AFTER `name`;
+ALTER TABLE `prefix_responses` CHANGE `contents` `content` LONGTEXT CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;
+ALTER TABLE `prefix_responses` ADD `tags` TEXT CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL AFTER `content`;
+ALTER TABLE `prefix_responses` ADD `type` TINYINT(1) NOT NULL AFTER `name`;
+
+# Remove Tables
+DROP TABLE IF EXISTS `prefix_commands`;

@@ -1,0 +1,12 @@
+# Update Account Image
+ALTER TABLE `prefix_users` CHANGE `image` `image` LONGTEXT CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;
+
+# Rename Sessions
+ALTER TABLE `prefix_sessions` RENAME TO `prefix_chats`;
+
+# Rename Chat / Session
+ALTER TABLE `prefix_activity` CHANGE `session` `chat` bigint(20) NOT NULL DEFAULT '0' AFTER `user`;
+ALTER TABLE `prefix_messages` CHANGE `session` `chat` bigint(20) NOT NULL DEFAULT '0' AFTER `id`;
+
+# Operator Accounts
+ALTER TABLE `prefix_users` ADD `custom` BIGINT(20) NOT NULL DEFAULT '0' AFTER `status`;

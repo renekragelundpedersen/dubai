@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install type="module" version="1.5.0">
+	<name>Live Help</name>
+	<author>Stardevelop Pty Ltd</author>
+	<creationDate>March 2010</creationDate>
+	<copyright>Copyright (C) 2003 - 2010 Stardevelop Pty Ltd. All rights reserved.</copyright>
+	<license>Commercial License</license>
+	<authorEmail>support@stardeveop.com</authorEmail>
+	<authorUrl>livehelp.stardevelop.com</authorUrl>
+	<version>1.6.0</version>
+	<description>Live Help HTML Code</description>
+	<files>
+		<filename module="mod_livehelp">helper.php</filename>
+		<filename module="mod_livehelp">mod_livehelp.php</filename>
+		<filename module="mod_livehelp">mod_livehelp.xml</filename>
+		<filename module="mod_livehelp">tmpl/default.php</filename>
+		<filename module="mod_livehelp">tmpl/index.html</filename>
+	</files>
+	<params>
+		<param name="url" type="text" size="50" default="" label="Live Help Install URL" description="The URL where the /livehelp installation is located" />
+		<param name="insert-library" type="radio" default="1" label="Insert jQuery Library" description="Insert jQuery Library">
+			<option value="1">Yes</option>
+			<option value="0">No</option>
+		</param>
+		<param name="embedded" type="radio" default="1" label="Embedded Chat" description="Embedded Chat">
+			<option value="1">Enabled</option>
+			<option value="0">Disabled</option>
+		</param>
+		<param name="slider" type="radio" default="0" label="Invite Tab" description="Invite Tab">
+			<option value="1">Enabled</option>
+			<option value="0">Disabled</option>
+		</param>
+		<param name="moduleclass_sfx" type="text" default="" label="Module Class Suffix" description="PARAMMODULECLASSSUFFIX" />
+    </params>
+	<config>
+		<fields name="params">
+			<fieldset name="advanced">
+				<field name="url" type="text" size="50" default="" label="Live Help Install URL" description="The URL where the /livehelp installation is located" />
+				<field name="insert-library" type="radio" default="1" label="Insert jQuery Library" description="Insert jQuery Library">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="embedded" type="radio" default="1" label="Embedded Chat" description="Embedded Chat">
+					<option value="1">Enabled</option>
+					<option value="0">Disabled</option>
+				</field>
+				<field name="slider" type="radio" default="0" label="Invite Tab" description="Invite Tab">
+					<option value="1">Enabled</option>
+					<option value="0">Disabled</option>
+				</field>
+				<field name="moduleclass_sfx" type="text" default="" label="Module Class Suffix" description="PARAMMODULECLASSSUFFIX" />
+			</fieldset>
+		</fields>
+	</config>
+	<!--
+	<params group="advanced">
+		<param name="cache" type="list" default="1" label="Caching" description="Select whether to cache the content of this module">
+			<option value="1">Use global</option>
+			<option value="0">No caching</option>
+		</param>
+		<param name="cache_time" type="text" default="900" label="Cache Time" description="The time before the module is recached" />
+	</params>
+	-->
+</install>

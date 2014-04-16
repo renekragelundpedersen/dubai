@@ -1,0 +1,67 @@
+Software License Agreement and Limited Warranty 
+
+Notice to user:
+
+Please read this License Carefully. This is a legal agreement between Stardevelop Pty Ltd (STARDEVELOP PTY. LTD. ACN: 109 493 674) or an authorized dealer/reseller/licensor of Stardevelop Pty Ltd ("Vendor"), and the end user ("Licensee"). Stardevelop Pty Ltd or the authorized dealer/reseller/licensor licenses the enclosed software and documentation to the original individual customer for use only on the terms described in this License Agreement (this "License"). Opening the enclosed CD/Disk envelope and / or using the Software indicates that the end user accepts and agrees to comply with these terms.  
+ 
+
+GRANT OF LICENSES 
+(a) Vendor hereby grants to Licensee a non-exclusive, nontransferable, license (without the ability to sublicense) to use this product and make one copy of the Software in machine-readable form for backup purposes. 
+
+(b) Vendor retains title to the Software in all forms whatsoever. 
+
+(c) Vendor reserves all rights not expressly granted herein. 
+
+
+2. LICENSE FEES
+
+This license shall have no force or effect unless and until the Licensee shall have submitted to Vendor all applicable license fees in full. All such fees are exclusive of any taxes, duties, licenses, fees, excises or tariffs now or hereafter imposed on Licensee's production, licensing, sale, transportation, import, export or use of the Software or Licensee Programs, all of which shall be the responsibility of Licensee. 
+
+
+3. LIMITED WARRANTY
+
+(a) Vendor warrants that for one (1) year following delivery of the Software to Licensee, the Software, unless modified in any way by Licensee, will perform substantially the functions described in any associated product documentation provided by Vendor. Vendor does not warrant that the Software will meet Licensee's specific requirements or that operation of the Software will be uninterrupted or error-free. Vendor is not responsible for any problem, including any problem that would otherwise be a breach of warranty, caused by: 
+
+Changes in the operating characteristics of computer hardware or computer operating systems. 
+Interaction of the Software with software not supplied or approved by Vendor. 
+Accident, abuse, or misapplication. 
+
+(b) Vendor's entire liability and Licensee's sole remedy under the foregoing warranty during the warranty period is that Vendor shall, at its sole and exclusive option, either use reasonable efforts to correct any reported deviation from the relevant product documentation, replace the Software with a functionally equivalent program, or refund all license fees paid, in which case, this License shall immediately terminate. Any repaired or replaced Software will be re-warranted for an additional ninety (90) day period, unless subsequently modified by Licensee. 
+
+(c) The Above warranties are exclusive and Vendor makes no other warranties, Whether expressed or implied, including the implied warranties of merchantability, fitness for a Particular purpose, or non-infringement. 
+
+
+4. LIMITATION OF LIABILITY
+
+Under no circumstances shall Vendor be liable for any incidental, special or consequential Damages, even if Vendor has been advised of the possibility of such damages. 
+
+In no event shall Vendor's total liability to Licensee for all damages, losses, and causes of action (whether in contract, tort (including negligence) or otherwise) exceed the amount paid by Licensee for the Software.
+
+
+5. BREACH AND TERMINATION
+
+(a) This License is effective until terminated. This License may be terminated by the non-defaulting party if either party materially fails to perform or comply with this License or any provision hereof. 
+
+(b) Termination due to a breach of Section 2 shall be effective immediately upon notice. In all other cases termination shall be effective thirty (30) days after notice of termination to the defaulting party if the defaults have not been cured within such thirty (30) day period. The rights and remedies of the parties provided herein shall not be exclusive and are in addition to any other rights and remedies provided by law or this Agreement. 
+
+(c) Upon termination of this Agreement, all rights and licenses granted hereunder shall immediately terminate and all Software and other Proprietary Information of Vendor in the possession of Licensee or under its control, shall be immediately returned to Vendor. End user licenses properly granted pursuant to this Agreement and prior to termination of this Agreement shall not be diminished or abridged by the termination of this Agreement. 
+
+
+6. GOVERNING LAW
+
+This License Agreement is governed and shall be interpreted by the laws of the State of Queensland, Australia. Each party irrevocably and unconditionally submits to the jurisdiction of the courts of Queensland, Australia in relation to any matter or dispute arising hereunder.
+
+
+7. NOTICE TO UNITED STATES GOVERNMENT END USERS
+
+The Software and Documentation:  
+
+Was developed with no government funds. 
+
+Is a trade secret of Stardevelop Pty Ltd for all purposes of the Freedom of Information Act. 
+
+Are "Commercial Items," as that term is defined at 48 C.F.R. §2.101, consisting of "Commercial Computer Software" and "Commercial Computer Software Documentation" as such terms are used in 48 C.F.R. §12.212 or 48 C.F.R. §227.7202, as applicable. Consistent with 48 C.F.R. §12.212 or 48 C.F.R. §227.7202-1 through §227.7202-4, as applicable, The "Commercial Computer Software" and "Commercial Computer Software Documentation" are being licensed to U.S. Government end users (i) only as "Commercial Items" and (ii) with only those rights granted to all other end users pursuant to the terms and conditions herein. 
+
+For units of the Department of Defense (DOD), this Software is sold only with "Restricted Rights" as that term is defined in the DOD Supplement to the Federal Acquisition Regulations ("DFARS") 52.227-7013 (c)(1)(ii) and use, duplication or disclosure is subject to restrictions as set forth in subparagraph (c)(1)(ii) of the Rights in Technical Data and Computer Software clause of DF ARS 52.227-7013. Manufacturer: Stardevelop Pty Ltd. 
+
+Unpublished-rights reserved under the copyright laws of Australia. Stardevelop Pty Ltd, Post Office Box 412, Helensvale, Queensland 4212, Australia Telephone: +61 402 876 739.

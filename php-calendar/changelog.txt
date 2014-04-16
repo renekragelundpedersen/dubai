@@ -1,0 +1,8 @@
+========================
+v1.0
+
+2011-1-8
+* Fixed bug where weeks with just padding days were showing
+
+2010-11-26
+* Creation of library.

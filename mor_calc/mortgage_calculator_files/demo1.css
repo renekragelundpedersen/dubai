@@ -1,0 +1,80 @@
+div.slider {
+	width: 200px;
+	height: 5px;
+	margin-top:3px;
+	background: #fff;
+	border:1px solid #395692;
+}
+div.slider div.knob {
+	background:url(bg-slide.gif) no-repeat 0 0;
+	width: 10px;
+	height: 20px;
+	margin:-2px 0 0 0 !important;
+	align:right;
+	cursor:pointer;
+}
+div#fontSize {
+	height: 50px;
+	font-family: Verdana, Tahoma;
+	font-size: 11px;
+	color:#333;
+}
+div#fontSize2 {
+	height: 50px;
+	font-family: Verdana, Tahoma;
+	font-size: 11px;
+	color:#333;
+}
+.help1calc, .installment {
+	font-family: Verdana, Tahoma;
+	font-size: 12px;
+	color:#333;
+	padding:3px;
+	border:1px solid #BDC9D2;
+	font-weight: bold;
+}
+.installment {
+	color:#333;
+}
+.inputcalc {
+	font-family: Verdana, Tahoma;
+	font-size: 11px;
+	font-weight: bold;
+}
+.calchead {
+	font-family: Arial, Verdana, Tahoma;
+	font-size: 14px;
+	color:#333;
+	font-weight: bold;
+}
+.calcmain {
+	font-family: Arial, Verdana, Tahoma;
+	font-size: 26px;
+	color:#395692;
+	font-weight: bold;
+}
+.tabcolorcalc {
+	background-color:#fff;
+	border: 1 solid #395692;
+}
+.tabcolorcalcmain {
+	padding:0;
+}
+td {
+	padding: 5pt;
+}
+div.advanced {
+	width: 400px;
+	margin: 5px 0;
+}
+div.advanced div.knob {
+	background: no-repeat center center;
+	cursor: pointer;
+}
+.tabcolorcalcmain {
+	margin:0 0 0 0;
+	padding:0 0 0 0;
+}
+.tabcolorcalcmain td {
+	font:normal 12px Arial;
+}

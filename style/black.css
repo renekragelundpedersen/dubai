@@ -1,0 +1,24 @@
+
+div.navigation a.prev {
+	background-image: url(prevPageArrowWhite.gif);
+}
+div.navigation a.next {
+	background-image: url(nextPageArrowWhite.gif);
+}
+div.loader {
+	background-image: url(loaderWhite.gif);
+}
+div.slideshow img {
+	border-color: #666;
+}
+ul.thumbs li.selected a.thumb {
+
+}
+div.pagination a:hover {
+	background-color: #111;
+}
+div.pagination span.current {
+	background-color: #fff;
+	border-color: #fff;
+	color: #000;
+}

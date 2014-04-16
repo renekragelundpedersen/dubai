@@ -1,0 +1,1861 @@
+html {
+	overflow: hidden;
+}
+
+body {
+	background: #eeedee;
+}
+
+*, span, div {
+	font-family: 'Segoe UI Light', 'Segoe WP Light', 'Helvetica Neue', RobotoLight, sans-serif;
+	font-size: 15px;
+	font-weight: 100;
+}
+
+img {
+	image-rendering: optimizeQuality;
+	-ms-interpolation-mode: bicubic;
+}
+
+@media screen and (max-height: 768px) {
+	.history .chart {
+		display: none;
+	}
+}
+
+@media screen and (max-height: 768px) {
+	.statistics .chart-container {
+		height: 50% !important;
+	}
+
+	.statistics .weekday {
+		left: 550px !important;
+	}
+}
+
+@media screen and (max-width: 1366px) {
+	#responses input#search {
+		width: 75% !important;
+	}
+}
+
+.background {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 100px;
+	background: #eeedee;
+	background: -moz-linear-gradient(top, #d6d6d6 0%, #eeedee 50%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #d6d6d6), color-stop(50%, #eeedee));
+	background: -webkit-linear-gradient(top, #d6d6d6 0%, #eeedee 50%);
+	background: -o-linear-gradient(top, #d6d6d6 0%, #eeedee 50%);
+	background: -ms-linear-gradient(top, #d6d6d6 0%, #eeedee 50%);
+	background: linear-gradient(to bottom, #d6d6d6 0%, #eeedee 50%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d6d6d6', endColorstr='#eeedee', GradientType=0 );
+}
+
+.background-bottom {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 60%;
+	background: #eeedee;
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+CiAgICA8c3RvcCBvZmZzZXQ9IjcwJSIgc3RvcC1jb2xvcj0iI2VlZWRlZSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNjY2NjY2MiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background: -moz-linear-gradient(-45deg, #eeedee 70%, #cccccc 100%);
+	background: -webkit-gradient(linear, left top, right bottom, color-stop(70%, #eeedee), color-stop(100%, #cccccc));
+	background: -webkit-linear-gradient(-45deg, #eeedee 70%, #cccccc 100%);
+	background: -o-linear-gradient(-45deg, #eeedee 70%, #cccccc 100%);
+	background: -ms-linear-gradient(-45deg, #eeedee 70%, #cccccc 100%);
+	background: linear-gradient(135deg, #eeedee 70%, #cccccc 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeedee', endColorstr='#cccccc', GradientType=1 );
+
+}
+
+.gradient {
+	filter: none;
+}
+
+.menu-container {
+	position: absolute; top: 30px; left:225px; z-index: 1;
+}
+
+/* Styles for the entire LavaLamp menu */
+.menu {
+	position: relative;
+	height: 44px; width: 100%;
+	padding: 15px; margin: 10px 0 0;
+	overflow: hidden;
+}
+
+	/* Force the list to flow horizontally */
+	.menu li {
+		float: left;
+		list-style: none;
+		padding-bottom: 10px;
+	}
+	
+/* Represents the background of the highlighted menu-item. */
+.menu li.backLava {
+	z-index: 8;
+	position: absolute;
+}
+	
+/* Styles for each menu-item. */
+.menu li a {
+	position: relative; overflow: hidden;
+	text-decoration: none;
+	outline: none;
+	font-family: 'Segoe UI Light', 'Segoe WP Light', 'Helvetica Neue', RobotoLight, sans-serif;
+	font-size: 38px;
+	line-height: 38px;
+	font-weight: 100;
+	color: #999999;
+	text-align: center;
+	height: 50px; top: 7px;
+	z-index: 10; letter-spacing: 0;
+	float: left; display: block;
+	margin: auto 15px;
+}
+
+.selectedMenu {
+	color: #00BBCC !important;
+}
+
+.notification {
+	position: relative;
+	background-color: #00BBCC;
+	width: 800px;
+	height: 75px;
+	top: -75px;
+	margin: 0 auto;
+	z-index: 1000;
+	cursor: pointer;
+}
+
+	.notification div.icon {
+		position: relative;
+		background: url('../images/message-notification.png') no-repeat;
+		width: 36px;
+		height: 23px;
+		left: 30px;
+		top: 35px;
+	}
+	
+	.notification div.notify {
+		position: absolute;
+		font-family: 'Segoe UI Light', 'Segoe WP Light', 'Helvetica Neue', RobotoLight, sans-serif;
+		font-size: 20px;
+		left: 66px;
+		padding-left: 10px;
+		top: 30px;
+		right: 225px;
+		color: #f2f2f2;
+		line-height: normal;
+		text-overflow: ellipsis;
+		overflow: hidden;
+		white-space: nowrap;
+	}
+
+	.notification div.title {
+		position: absolute;
+		font-family: 'Segoe UI Light', 'Segoe WP Light', 'Helvetica Neue', RobotoLight, sans-serif;
+		font-size: 28px;
+		font-weight: 100;
+		color: #f2f2f2;
+		right: 65px;
+		top: 20px;
+		margin: 0 auto;
+	}
+
+	.notification div.close {
+		position: absolute;
+		background: url('../images/CloseButtonWhite.png') no-repeat;
+		width: 30px;
+		height: 30px;
+		left: 750px;
+		top: 12px;
+		margin: 0 auto;
+		cursor: pointer;
+		opacity: 0.5;
+	}
+
+	.notification div.close:hover {
+		opacity: 0.75;
+	}
+
+.settings-parent {
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+
+.settings {
+	position: relative;
+	background: #f1f1f1;
+	width: 60%;
+	min-width: 800px;
+	max-width: 1000px;
+	height: 0;
+	top: 0;
+	margin: 0 auto;
+	border: 1px solid #ccc;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	border-top: none;
+	-webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	 -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+			box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	-webkit-background-clip: padding-box;
+	 -moz-background-clip: padding;
+			background-clip: padding-box;
+	display:none;
+	overflow: hidden;
+	z-index: 1000;
+}
+
+	.settings div.title {
+		position: absolute;
+		font-family: 'Segoe UI Light', 'Segoe WP Light', 'Helvetica Neue', RobotoLight, sans-serif;
+		font-size: 36px;
+		font-weight: 100;
+		color: #999999;
+		left: 600px;
+		top: 10px;
+		margin: 0 auto;
+	}
+
+	.settings div.close {
+		position: absolute;
+		background: url('../images/CloseButton.png') no-repeat;
+		width: 30px;
+		height: 30px;
+		top: -5px;
+		right: 10px;
+		margin: 0 auto;
+		cursor: pointer;
+		opacity: 0.1;
+	}
+	
+	.settings div.close:hover {
+		opacity: 0.2;
+	}
+	
+	.settings input[type=radio] {
+		top: 0;
+		height: 20px;
+		margin: 0 3px;
+	}
+	
+	.settingsmenu {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 270px;
+		padding-top: 50px;
+		background: #f7f7f7;
+		height: 100%;
+	}
+	
+	.settingsmenu div {
+		position: relative;
+		padding: 5px;
+		height: 35px;
+		width: 220px;
+		z-index: 20;
+		margin: 5px 5px 5px 35px;
+		cursor: pointer;
+	}
+	
+	.settingsmenu div span {
+		position: relative;
+		top: -3px;
+		font-family: 'Segoe UI Light', 'Segoe WP Light', 'Helvetica Neue', RobotoLight, sans-serif;
+		font-size: 28px;
+		line-height: normal;
+		font-weight: 100;
+		color: #666666;
+		padding-left: 30px;
+		width: 195px;
+		z-index: 15;
+		cursor: pointer;
+	}
+	
+	.settingsmenu #general {
+		background: url('../images/General.png') no-repeat center left;
+	}
+	
+	.settingsmenu #appearance {
+		background: url('../images/Appearance.png') no-repeat center left;
+	}
+	
+	.settingsmenu #alerts {
+		background: url('../images/Alerts.png') no-repeat center left;
+	}
+	
+	.settingsmenu #images {
+		background: url('../images/Images.png') no-repeat center left;
+	}
+
+	.settingsmenu #startup {
+		background: url('../images/Startup.png') no-repeat center left;
+	}
+	
+	.settingsmenu #htmlcode {
+		background: url('../images/HTML Code.png') no-repeat center left;
+	}
+
+	.settingsmenu #email {
+		background: url('../images/Email.png') no-repeat center left;
+	}
+	
+	.settingsmenu #filetransfer {
+		background: url('../images/File Transfer.png') no-repeat center left;
+	}
+	
+	.settingsmenu #initiatechat {
+		background: url('../images/Initiate Chat.png') no-repeat center left;
+	}
+
+	.settingsmenu #privacy {
+		background: url('../images/Privacy.png') no-repeat center left;
+	}
+	
+	.settingsmenu #voip {
+		background: url('../images/VoIP.png') no-repeat center left;
+	}
+	
+	.settingsmenu .backLava {
+		position: absolute;
+		top: 0;
+		left: 0;
+		background: #f1f1f1;
+		z-index: 10;
+	}
+
+label {
+	display: block;
+	font-family: 'Segoe UI Light', 'Segoe WP Light', 'Helvetica Neue', RobotoLight, sans-serif;
+	font-size: 20px !important;
+	font-weight: 100 !important;
+	color: #000000 !important;
+}
+
+#backgroundcolor, #sentcolor, #receivedcolor, #generalfontcolor, #generalfontlinkcolor {
+	width: 150px;
+}
+
+input[type=text], select {
+	margin: 0 3px 5px 3px;
+	font-family: 'Segoe UI Light', 'Segoe WP Light', 'Helvetica Neue', RobotoLight, sans-serif;
+	font-size: 18px;
+	font-weight: 100;
+	color: #000000;
+	width: 400px;
+}
+
+#account-details input[type="text"], #account-details input[type="password"], #account-details select {
+	margin: 0 0 0 4px;
+}
+
+input[type=radio] {
+	position: relative;
+	top: -7px;
+}
+
+.checkbox label {
+	font-family: 'Segoe UI Light', 'Segoe WP Light', 'Helvetica Neue', RobotoLight, sans-serif;
+	font-size: 20px;
+	font-weight: 100;
+	display:inline;
+	color: #999999;
+	margin-right: 10px;
+}
+
+.logo {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	width: 294px;
+	height: 83px;
+	background: url('../images/logo.png') no-repeat center left;
+}
+
+.settings .section div, .settings .section span {
+	font-family: Segoe UI, Segoe WP, Helvetica Neue, Roboto, sans-serif;
+	font-size: 12px;
+	margin-below: 5px;
+}
+
+.settings-general {
+	position: absolute;
+	top: 40px;
+	left: 300px;
+	width: 450px;
+}
+
+	.settings-htmlcode textarea {
+		width: 450px;
+		height: 150px;
+		resize: none;
+		font-size: 12px;
+	}
+	
+	.settings-htmlcode .copy {
+		float: right;
+		display: inline-block;
+		padding: 5px;
+	}
+	
+	.settings-htmlcode .copy span {
+		line-height: 16px;
+		margin-left: 5px;
+		vertical-align: middle;
+	}
+	
+.sections .section {
+	position: absolute;
+	top: 40px;
+	left: 300px;
+	width: 475px;
+	display: none;
+}
+
+.copy:hover, .copy.hover {
+background: #E5E5E5;
+}
+
+.chatting .backLava {
+position: absolute;
+background: rgba(0, 187, 204, 0.1);
+-moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px;
+border: 1px solid rgba(0, 187, 204, 0.1);
+background:-moz-linear-gradient(top, rgba(0, 187, 204, 0.1), rgba(0, 187, 204, 0.2));
+background:-webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(0, 187, 204, 0.1)), color-stop(1.0, rgba(0, 187, 204, 0.2)));
+background:linear-gradient(top, rgba(0, 187, 204, 0.1), rgba(0, 187, 204, 0.2));
+z-index: 10;
+-moz-box-shadow: inset 0 0 2px rgba(0, 187, 204, 0.2);
+-webkit-box-shadow: inset 0 0 2px rgba(0, 187, 204, 0.2);
+box-shadow: inset 0 0 2px rgba(0, 187, 204, 0.2);
+}
+
+.chat-stack {
+position: absolute;
+top: -10px;
+left: 240px;
+height: 0;
+opacity: 0;
+}
+
+.chat-stack textarea {
+	font-family: Segoe UI, Segoe WP, Helvetica Neue, Roboto, sans-serif;
+	position: absolute;
+	left: 15px;
+	bottom: 15px;
+	height: 30px;
+	right: 90px;
+	width: auto;
+	font-size: 14px;
+	height: 80px;
+	resize: none;
+}
+
+.chat-stack .btn-toolbar {
+	position: absolute;
+	bottom: 45px;
+	right: 25px;
+	text-align: center;
+}
+
+.chat {
+position: absolute;
+top: 0;
+bottom: 4px;
+width: 600px;
+background-color: #f6f6f6;
+border: 1px solid #ccc;
+border: 1px solid rgba(0, 0, 0, 0.2);
+border-top: none;
+-webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+ -moz-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+		box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+-webkit-background-clip: padding-box;
+ -moz-background-clip: padding;
+		background-clip: padding-box;
+}
+
+.chat .name {
+font-family: 'Segoe UI Light', 'Segoe WP Light', 'Helvetica Neue', RobotoLight, sans-serif;
+font-size: 24px;
+color: #999;
+font-weight: 100;
+-ms-transform: rotate(90deg);
+-ms-transform-origin: 100% 0;
+-o-transform: rotate(90deg);
+-o-transform-origin: 100% 0;
+-webkit-transform: rotate(90deg);
+-webkit-transform-origin: 100% 0;
+-moz-transform: rotate(90deg);
+-moz-transform-origin: 100% 0;
+transform: rotate(90deg);
+transform-origin: 100% 0;
+position: absolute;
+right: 5px;
+bottom: 25px;
+}
+
+.chat div.close {
+position: absolute;
+background: url('../images/CloseButton.png') no-repeat;
+width: 30px;
+height: 30px;
+top: -5px;
+right: 10px;
+margin: 0 auto;
+cursor: pointer;
+opacity: 0.1;
+}
+
+.chat div.close:hover {
+opacity: 0.2;
+}
+
+.chat div.title {
+font-family: 'Segoe UI Light', 'Segoe WP Light', 'Helvetica Neue', RobotoLight, sans-serif;
+font-size: 30px;
+line-height: normal;
+color: #999;
+font-weight: 100;
+margin: 20px;
+overflow: hidden;
+white-space: nowrap;
+width: 560px;
+text-overflow: ellipsis;
+}
+
+.chat .inputs {
+display: none;
+}
+
+.chat .scroll {
+width: 98%;
+}
+
+.chat .btn {
+margin: 3px;
+}
+	
+	
+/* jQuery Metro Style Calendar */
+#calendar {
+	margin: 0;
+	padding: 0;
+	font-family: 'Segoe UI Light', 'Segoe WP Light', 'Helvetica Neue', RobotoLight, sans-serif;
+	font-size: 12px;
+	color: #999;
+	background-color: #EEEDEE;
+	width: 350px;
+	min-height: 100px;
+	margin: 0 auto;
+}
+
+#calendar, #nav-calendar {
+	width: 290px;
+	min-height: 50px;
+	margin: 0 auto;
+}
+
+#year, #month {
+	text-align: center;
+}
+
+.year-buttons {
+	opacity: 0;
+	-moz-opacity: 0;
+	filter:alpha(opacity=0);
+}
+
+#nav-calendar:hover .year-buttons {
+	opacity: 1;
+	-moz-opacity: 1;
+	filter:alpha(opacity=1);
+}
+
+#year-left-arrow, #year-right-arrow {
+	display: inline-block;
+	width: 19px;
+	height: 19px;
+	cursor: pointer;
+	margin-bottom: -5px;
+}
+
+#year-left-arrow {
+	background-image: url('../images/small-left-arrow.png');
+	margin-right: 55px;
+}
+
+#year-right-arrow {
+	background-image: url('../images/small-right-arrow.png');
+	margin-left: 55px
+}
+
+#month-left-arrow, #month-right-arrow {
+	display: inline-block;
+	width: 19px;
+	height: 19px;
+	cursor: pointer;
+	margin-top: 6px;
+	opacity: 0.3;
+	-moz-opacity: 0.3;
+	filter:alpha(opacity=3);
+}
+
+#month-left-arrow:hover, #month-right-arrow:hover {
+	opacity: 1;
+	-moz-opacity: 1;
+	filter:alpha(opacity=1);
+}
+
+#month-left-arrow {
+	background-image: url('../images/small-left-arrow.png');
+	float: left;
+	margin-left: 7px;
+}
+
+#month-right-arrow {
+	background-image: url('../images/small-right-arrow.png');
+	float: right;
+	margin-right: 7px;
+}
+
+#currentmonth {
+	font-size: 22px;
+}
+
+.today {
+	background-color: #AAA;
+	color: #EEEDEE;
+	border-radius: 20px;
+	cursor: default;
+}
+
+.selected-date {
+	color: #999;
+	background-color: transparent;
+	border: 2px solid #0BC;
+	border-radius: 20px;
+	width: 26px !important;
+	height: 25px !important;
+	cursor: default;
+}
+
+#calendar td:hover, #calendar th:hover {
+	color: #999;
+	background-color: #EEEDEE;
+	border: 2px solid #999;
+	border-radius: 20px;
+	width: 26px;
+	height: 25px;
+	cursor: pointer;
+}
+
+#calendar tr.padding:hover, #calendar td.padding:hover, #calendar tr#week-days th:hover, #calendar td#separator, #calendar td#clear-separator {
+	border: none;
+	height: auto;
+	width: auto;
+	cursor: default;
+}
+
+.date_has_event {
+	color: #999;
+	background-color: #EEEDEE;
+	border: 2px solid #999;
+	border-radius: 20px;
+	width: 26px;
+	height: 25px;
+	cursor: pointer;
+}
+
+#calendar table {
+	text-align: center;
+	margin: 0 auto;
+	border-spacing: 8px 0px;
+	border-collapse: separate;
+	max-width: none;
+	padding: auto;
+	border: none;
+}
+
+#calendar th {
+	text-transform: uppercase;
+	font-size: 10px;
+	font-weight: normal;
+	vertical-align: middle;
+}
+
+#calendar table td {
+	width: 30px;
+	height: 29px;
+	padding-top: 1px;
+	vertical-align: middle;
+}
+
+#week-days {
+	height: 25px;
+}
+
+#calendar #separator {
+	padding: 0;
+	border-spacing: 10px 10px;
+	border
+	margin: 5px 0;
+	width: 100%;
+	height: 1px;
+	background-color: #999;
+}
+
+#calendar #clear-separator {
+	height: 5px;
+}
+
+.events {
+	position: absolute;
+}
+
+.events ul {
+	text-align: center;
+	position: absolute;
+	display: none;
+	z-index: 1000;
+	padding: 15px;
+	background: rgba(17, 17, 17, 0.9);
+	font-size: 15px;
+	width: 200px;
+	list-style: none;
+	color: #999;
+}
+
+.events li {
+	padding-bottom: 5px;
+}
+
+.events li span {
+	display: block;
+	font-size: 12px;
+	color: #999;
+}
+
+.events li span.title {
+	color: #999;
+}
+
+
+/* Bubble */
+.message {
+	position: relative;
+	padding: 15px 15px 20px 15px;
+	margin: 10px 50px 15px 20px;
+	background: rgba(0, 187, 204, 1);
+	border: none;
+}
+
+.message div {
+	font-family: 'Segoe UI Light', 'Segoe WP Light', 'Helvetica Neue', RobotoLight, sans-serif;
+	font-weight: 100;
+	font-size: 15px;
+	color: #666;
+	margin: 0 5px;
+}
+
+.message.left div {
+	color: #fff;
+}
+
+.message:after {
+	content:"";
+	position:absolute;
+	bottom:-15px; /* value = - border-top-width - border-bottom-width */
+	left:50px; /* controls horizontal position */
+	border-width:15px 15px 0 0; /* vary these values to change the angle of the vertex */
+	border-style:solid;
+	border-color:transparent rgba(0, 187, 204, 1); 
+	/* reduce the damage in FF3.0 */
+	display:block; 
+	width:0;
+}
+
+.message.left:after {
+	top:16px; 
+	left:-15px; /* value = - border-left-width - border-right-width */
+	bottom:auto;
+	border-width:15px 0 0 15px; /* vary these values to change the angle of the vertex */
+	border-color:rgba(0, 187, 204, 1) transparent; 
+}
+
+.message.right {
+	margin: 10px 20px 10px 50px;
+	background:#ebebeb;
+}
+
+.message.right::-moz-selection, .message.right div::-moz-selection{ background:#ccc; color:#fff; text-shadow: none; }
+.message.right::selection, .message.right div::selection { background:#ccc; color:#fff; text-shadow: none; }
+
+.message.right:after {
+	top:16px; 
+	right:-15px; /* value = - border-left-width - border-right-width */
+	bottom:auto;
+	left:auto;
+	border-width:0 0 15px 15px; /* vary these values to change the angle of the vertex */
+	border-color:transparent #ebebeb; 
+}
+
+.message:after {
+	content:"";
+	position:absolute;
+	bottom:-20px; /* value = - border-top-width - border-bottom-width */
+	left:50px; /* controls horizontal position */
+	border-width:0 0 20px 20px; /* vary these values to change the angle of the vertex */
+	border-style:solid;
+	border-color:#eee transparent; 
+	/* reduce the damage in FF3.0 */
+	display:block; 
+	width:0;
+}
+
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+	.scroll {
+		right: 5px;
+	}
+}
+
+.scroll {
+	position:absolute;
+	margin: 5px;
+	font-family: 'Segoe UI Light', 'Segoe WP Light', 'Helvetica Neue', RobotoLight, sans-serif;
+	font-size: 12px;
+	top: 70px;
+	bottom: 135px;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+.scroll div {
+	font-family: Segoe UI, Segoe WP, Helvetica Neue, Roboto, sans-serif;
+	font-weight: 100;
+	font-size: 14px;
+}
+
+.scroll::-webkit-scrollbar-track {
+	visibility: hidden; /* doesn't seem to work */
+}
+.scroll::-webkit-scrollbar {
+	position: absolute;
+	width: 8px;
+	height: 8px;
+}
+
+.scroll::-webkit-scrollbar-button:start:decrement {
+	display: block;
+	width: 5px;
+	height: 5px;
+	background-color: transparent;
+}
+.scroll::-webkit-scrollbar-button:end:increment {
+	display: block;
+	width: 5px;
+	height: 5px;
+	background-color: transparent;
+}
+.scroll::-webkit-scrollbar-track:enabled {
+	background-color: transparent;
+}
+.scroll::-webkit-scrollbar-track-piece {
+	background-color: transparent;
+	border: none;
+	margin: 8px 0 5px 0;
+}
+.scroll::-webkit-scrollbar-thumb:vertical {
+	height: 30px;
+	border: 1px solid rgba(140, 140, 140, .5);
+	background-color: rgba(155, 155, 155, .5);
+	-moz-border-radius: 5px; 
+	-webkit-border-radius: 5px; 
+	border-radius: 5px; 
+	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.2), inset 0 0 1px rgba(255, 255, 255, .8);
+	-moz-box-shadow: 0 1px 3px rgba(0,0,0,0.2), inset 0 0 1px rgba(255, 255, 255, .8);
+	box-shadow: 0 1px 3px rgba(0,0,0,0.2), inset 0 0 1px rgba(255, 255, 255, .8);
+	-webkit-transition: background-color .2s;
+	-moz-transition: background-color .2s;
+	transition: background-color .2s;
+}
+.scroll::-webkit-scrollbar-thumb:vertical:active {
+	background-color: rgba(155, 155, 155, 1);
+	border: 1px solid rgba(140, 140, 140, 1);
+}
+.scroll::-webkit-scrollbar-thumb:horizontal {
+	width: 30px;
+	border: 1px solid rgba(140, 140, 140, .5);
+	background-color: rgba(155, 155, 155, .5);
+	-moz-border-radius: 5px; 
+	-webkit-border-radius: 5px; 
+	border-radius: 5px; 
+	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.2), inset 0 0 1px rgba(255, 255, 255, .8);
+	-moz-box-shadow: 0 1px 3px rgba(0,0,0,0.2), inset 0 0 1px rgba(255, 255, 255, .8);
+	box-shadow: 0 1px 3px rgba(0,0,0,0.2), inset 0 0 1px rgba(255, 255, 255, .8);
+	-webkit-transition: background-color .2s;
+	-moz-transition: background-color .2s;
+	transition: background-color .2s;
+}
+.scroll::-webkit-scrollbar-thumb:horizontal:active {
+	background-color: rgba(155, 155, 155, 1);
+	border: 1px solid rgba(140, 140, 140, 1);
+}
+
+
+#visitor-details {
+	border: 1px solid #ccc;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	border-top: none;
+	border-right: none;
+	border-bottom: none;
+	-webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+	 -moz-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+			box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+	-webkit-background-clip: padding-box;
+	 -moz-background-clip: padding;
+			background-clip: padding-box;
+}
+
+	#visitor-details {
+		position: absolute;
+		z-index: 200;
+		background: #f3f3f3;
+		right: 0;
+		bottom: 0;
+		top: 0;
+		width: 0;
+		opacity: 0;
+		display: none;
+	}
+
+	#visitor-details a {
+		color: #666;
+		text-decoration: none;
+	}
+	
+	#visitor-details a:hover {
+		color: #333;
+		text-decoration: underline;
+	}
+
+	#visitor-details div.close {
+		position: absolute;
+		background: url('../images/CloseButton.png') no-repeat;
+		width: 30px;
+		height: 30px;
+		top: -5px;
+		right: 10px;
+		margin: 0 auto;
+		cursor: pointer;
+		opacity: 0.1;
+	}
+	
+	#visitor-details div.close:hover {
+		opacity: 0.2;
+	}
+	
+	#visitor-details .details {
+		margin: 0 0 0 25px;
+		/*overflow: auto; */
+		position: absolute;
+		top: 60px;
+		bottom: 25px;
+		width: 95%;
+	}
+	
+	#visitor-details #hostname {
+		font-family: 'Segoe UI Light', 'Segoe WP Light', 'Helvetica Neue', RobotoLight, sans-serif;
+		font-size: 38px;
+		line-height: normal;
+		font-weight: 100;
+		color: #999;
+		margin-bottom: 15px;
+		text-overflow: ellipsis;
+		overflow: hidden;
+		white-space: nowrap;
+	}
+	
+	#visitor-details .label {
+		font-family: 'Segoe UI Light', 'Segoe WP Light', 'Helvetica Neue', RobotoLight, sans-serif;
+		font-size: 18px;
+		line-height: normal;
+		font-weight: 100;
+		color: #999;
+		background-color: transparent;
+		margin: 15px 5px 5px 0;
+		padding: 0;
+		text-shadow: none;
+	}
+	
+	#visitor-details .value {
+		font-family: 'Segoe UI Light', 'Segoe WP Light', 'Helvetica Neue', RobotoLight, sans-serif;
+		font-size: 18px;
+		line-height: normal;
+		font-weight: 100;
+		color: #666;
+		margin: 5px 5px 5px 0;
+		text-overflow: ellipsis;
+		overflow: hidden;
+	}
+
+.search.button {
+	display: inline-block;
+	opacity: 0.3;
+	width: 22px;
+	height: 22px;
+	background: url('../images/Search.png') no-repeat;
+	margin: 2px 5px;
+	position: relative;
+}
+
+.search.button:hover {
+	opacity: 0.5;
+}
+
+.add-small.button {
+	display: inline-block;
+	opacity: 0.3;
+	width: 22px;
+	height: 22px;
+	background: url('../images/Add.png') no-repeat;
+	margin: 2px 5px;
+	position: relative;
+}
+
+.add-small.button:hover {
+	opacity: 0.5;
+}
+
+.smilies.button {
+	display: inline-block;
+	opacity: 0.3;
+	margin: 2px 5px;
+	position: relative;
+}
+
+.smilies.button:hover {
+	opacity: 0.5;
+}
+
+#SmiliesTooltip { display:none }
+
+#SmiliesTooltip span, .Smilie { display:inline-block; margin: 1px }
+
+#SmiliesBubble table.bt-bottom th {
+	width: 100%;
+}
+
+/* BubbleTip CSS */
+
+.bubbletip {
+	position: absolute;
+	z-index: 90000000;
+	width: auto;
+	border-collapse: collapse;
+	margin: 0;
+	border: none;
+	-webkit-border-radius: 0; -moz-border-radius: 0; border-radius: 0;
+	direction: ltr;
+}
+.bubbletip td, .bubbletip th, .bubbletip table, .bubbletip table td, .bubbletip table th {
+	border: none;
+	margin: 0;
+	padding: 0;
+	width: auto;
+	line-height: normal;
+}
+.bubbletip td.bt-topleft {
+	background: transparent url(../images/bubbletip/bubbletip.png) no-repeat scroll 0px 0px;
+	height: 33px;
+	width: 33px;
+}
+.bubbletip td.bt-top {
+	background: transparent url(../images/bubbletip/bubbletip-T-B.png) repeat-x scroll 0px 0px;
+	height: 33px;
+}
+.bubbletip td.bt-topright {
+	background: transparent url(../images/bubbletip/bubbletip.png) no-repeat scroll -73px 0px;
+	height: 33px;
+	width: 33px;
+}
+.bubbletip td.bt-left-tail div.bt-left, .bubbletip td.bt-left {
+	background: transparent url(../images/bubbletip/bubbletip-L-R.png) repeat-y scroll 0px 0px;
+	width: 33px;
+}
+.bubbletip td.bt-left-tail div.bt-left-tail {
+	background: transparent url(../images/bubbletip/bubbletip.png) no-repeat scroll 0px -33px;
+	width: 33px;
+	height: 40px;
+}
+.bubbletip td.bt-right-tail div.bt-right, .bubbletip td.bt-right {
+	background: transparent url(../images/bubbletip/bubbletip-L-R.png) repeat-y scroll -33px 0px;
+	width: 33px;
+}
+.bubbletip td.bt-right-tail div.bt-right-tail {
+	background: transparent url(../images/bubbletip/bubbletip.png) no-repeat scroll -73px -33px;
+	width: 33px;
+	height: 40px;
+}
+.bubbletip td.bt-bottomleft {
+	background: transparent url(../images/bubbletip/bubbletip.png) no-repeat scroll 0px -73px;
+	height: 33px;
+	width: 33px;
+}
+.bubbletip td.bt-bottom {
+	background: transparent url(../images/bubbletip/bubbletip-T-B.png) repeat-x scroll 0px -33px;
+	height: 33px;
+}
+.bubbletip td.bt-bottomright {
+	background: transparent url(../images/bubbletip/bubbletip.png) no-repeat scroll -73px -73px;
+	height: 33px;
+	width: 33px;
+}
+.bubbletip table.bt-top, .bubbletip table.bt-bottom {
+	width: 100%;
+}
+.bubbletip table.bt-top th {
+	width: 50%;
+	background: transparent url(../images/bubbletip/bubbletip-T-B.png) repeat-x scroll 0px 0px;
+}
+.bubbletip table.bt-bottom th {
+	width: 50%;
+	background: transparent url(../images/bubbletip/bubbletip-T-B.png) repeat-x scroll 0px -33px;
+}
+.bubbletip table.bt-top td div {
+	background: transparent url(../images/bubbletip/bubbletip.png) no-repeat scroll -33px 0px;
+	width: 40px;
+	height: 33px;
+}
+.bubbletip table.bt-bottom td div {
+	background: transparent url(../images/bubbletip/bubbletip.png) no-repeat scroll -33px -73px;
+	width: 40px;
+	height: 33px;
+}
+.bubbletip td.bt-content {
+	background-color: #fff;
+	vertical-align: middle;
+}
+
+#account-details, #responses {
+	border: 1px solid #ccc;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	border-top: none;
+	border-right: none;
+	border-bottom: none;
+	overflow: hidden;
+	-webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+	 -moz-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+			box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+	-webkit-background-clip: padding-box;
+	 -moz-background-clip: padding;
+			background-clip: padding-box;
+}
+
+	#account-details, #responses {
+		position: absolute;
+		z-index: 1000;
+		background: #f3f3f3;
+		right: 0;
+		bottom: 0;
+		top: 0;
+		width: 0;
+		opacity: 0;
+		display: none;
+	}
+	
+	#responses {
+		z-index: 1000;
+	}
+	
+	#account-details .slick-viewport {
+		overflow-x: hidden !important;
+	}
+	
+	#account-details div.back, #responses div.back {
+		position: absolute;
+		background: url('../images/BackButton.png') no-repeat;
+		width: 60px;
+		height: 60px;
+		top: -15px;
+		left: -7px;
+		margin: 0 auto;
+		cursor: pointer;
+		opacity: 0.1;
+		z-index: 200;
+	}
+	
+	#account-details div.back:hover, #responses div.back:hover {
+		opacity: 0.2;
+	}
+
+	#account-details div.close, #responses div.close {
+		position: absolute;
+		background: url('../images/CloseButton.png') no-repeat;
+		width: 30px;
+		height: 30px;
+		top: -5px;
+		right: 10px;
+		margin: 0 auto;
+		cursor: pointer;
+		opacity: 0.1;
+		z-index: 200;
+	}
+	
+	#account-details div.close:hover, #responses div.close:hover {
+		opacity: 0.2;
+	}
+	
+	#account-details .details, #responses .details {
+		margin: 0;
+		overflow: hidden;
+		position: absolute;
+		top: 0px;
+		padding-top: 60px;
+		bottom: 0;
+		width: 100%;
+	}
+	
+	#account-details .header, #responses .header {
+		font-family: 'Segoe UI Light', 'Segoe WP Light', 'Helvetica Neue', RobotoLight, sans-serif;
+		font-size: 38px;
+		line-height: normal;
+		font-weight: 100;
+		color: #999;
+		margin-left: 25px;
+		margin-bottom: 15px;
+		text-overflow: ellipsis;
+		overflow: hidden;
+		white-space: nowrap;
+	}
+	
+	#account-details .slick-header-column:hover, .slick-header-column-active {
+		background: transparent;
+	}
+	
+	#account-details .slick-header-column {
+		background: transparent;
+		border-right: none;
+	}
+	
+	#account-details .label, #responses .label {
+		font-family: 'Segoe UI Light', 'Segoe WP Light', 'Helvetica Neue', RobotoLight, sans-serif;
+		font-size: 18px;
+		line-height: normal;
+		font-weight: 100;
+		color: #999;
+		background-color: transparent;
+		margin: 10px 5px 5px 0;
+		padding: 0;
+		text-shadow: none;
+	}
+	
+	#responses .content {
+		font-family: Segoe UI, Segoe WP, Helvetica Neue, Roboto, sans-serif;
+		font-size: 14px;
+		line-height: normal;
+		font-weight: 100;
+		color: #666;
+		margin: 3px;
+	}
+	
+	#responses .response:hover {
+		background: #e5e5e5;
+		padding: 5px;
+	}
+	
+	#account-details .value {
+		font-family: 'Segoe UI Light', 'Segoe WP Light', 'Helvetica Neue', RobotoLight, sans-serif;
+		font-size: 18px;
+		line-height: normal;
+		font-weight: 100;
+		color: #333;
+		margin: 5px 5px 5px 0;
+		text-overflow: ellipsis;
+		overflow: hidden;
+	}
+	
+	.add-button {
+		position: absolute;
+		background: url('../images/AddButton.png') no-repeat;
+		width: 40px;
+		height: 40px;
+		top: 0;
+		margin: 0 auto;
+		cursor: pointer;
+		opacity: 0.3;
+	}
+
+	.edit-button {
+		position: absolute;
+		background: url('../images/EditButton.png') no-repeat;
+		width: 40px;
+		height: 40px;
+		top: 0;
+		margin: 0 auto;
+		cursor: pointer;
+		opacity: 0.3;
+	}
+	
+	.save-button {
+		position: absolute;
+		background: url('../images/SaveButton.png') no-repeat;
+		width: 40px;
+		height: 40px;
+		top: 0;
+		margin: 0 auto;
+		cursor: pointer;
+		opacity: 0.3;
+	}
+	.delete-button {
+		position: absolute;
+		background: url('../images/DeleteButton.png') no-repeat;
+		width: 40px;
+		height: 40px;
+		top: 0;
+		margin: 0 auto;
+		cursor: pointer;
+		opacity: 0.3;
+	}
+	
+	.cancel-button {
+		position: absolute;
+		background: url('../images/CancelButton.png') no-repeat;
+		width: 40px;
+		height: 40px;
+		top: 0;
+		margin: 0 auto;
+		cursor: pointer;
+		opacity: 0.3;
+	}
+
+	.accept-button {
+		position: absolute;
+		background: url('../images/AcceptButton.png') no-repeat;
+		width: 40px;
+		height: 40px;
+		top: 0;
+		margin: 0 auto;
+		cursor: pointer;
+		opacity: 0.3;
+	}
+
+	.add-button:hover, .edit-button:hover, .delete-button:hover, .cancel-button:hover, .save-button:hover, .accept-button:hover {
+		opacity: 0.6;
+	}
+	
+	.button {
+		display: inline-block;
+		bottom: 0;
+		height: 67px;
+		width: 40px;
+		text-align: center;
+		margin: 0 5px;
+	}
+	
+	.button .text {
+		position: absolute;
+		font-family: 'Segoe UI Light', 'Segoe WP Light', 'Helvetica Neue', RobotoLight, sans-serif;
+		font-size: 14px;
+		line-height: 14px;
+		font-weight: 100;
+		color: #666666;
+		text-align: center;
+		bottom: 0;
+		width: 40px;
+	}
+	
+	.button-toolbar {
+		position: absolute;
+		bottom: 20px;
+		margin: 0 auto;
+		height: 67px;
+		width: 100%;
+	}
+	
+#history-chat {
+	border: 1px solid #ccc;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	border-top: none;
+	border-right: none;
+	border-bottom: none;
+	overflow: hidden;
+	-webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+	 -moz-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+			box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+	-webkit-background-clip: padding-box;
+	 -moz-background-clip: padding;
+			background-clip: padding-box;
+}
+
+	#history-chat {
+		position: absolute;
+		z-index: 1000;
+		background: #f3f3f3;
+		right: 0;
+		bottom: 0;
+		top: 0;
+		width: 0;
+		opacity: 0;
+		display: none;
+	}
+
+	#history-chat div.back {
+		position: absolute;
+		background: url('../images/BackButton.png') no-repeat;
+		width: 60px;
+		height: 60px;
+		top: -15px;
+		left: -7px;
+		margin: 0 auto;
+		cursor: pointer;
+		opacity: 0.1;
+	}
+	
+	#history-chat div.back:hover {
+		opacity: 0.2;
+	}
+
+	#history-chat div.close {
+		position: absolute;
+		background: url('../images/CloseButton.png') no-repeat;
+		width: 30px;
+		height: 30px;
+		top: -5px;
+		right: 10px;
+		margin: 0 auto;
+		cursor: pointer;
+		opacity: 0.1;
+	}
+	
+	#history-chat div.close:hover {
+		opacity: 0.2;
+	}
+	
+	#history-chat .name {
+		margin: 20px;
+		font-family: 'Segoe UI Light', 'Segoe WP Light', 'Helvetica Neue', RobotoLight, sans-serif;
+		font-size: 38px;
+		line-height: normal;
+		font-weight: 100;
+		color: #999;
+		margin-bottom: 15px;
+		text-overflow: ellipsis;
+		overflow: hidden;
+		white-space: nowrap;
+	}
+	
+.history-grid a, .messages a {
+	font-family: 'Segoe UI Light', 'Segoe WP Light', 'Helvetica Neue', RobotoLight, sans-serif;
+	font-size: 15px;
+	font-weight: 100;
+	color: #666;
+	text-decoration: none;
+}
+
+.history-grid a:hover, .messages a:hover {
+	font-family: 'Segoe UI Light', 'Segoe WP Light', 'Helvetica Neue', RobotoLight, sans-serif;
+	font-size: 15px;
+	font-weight: 100;
+	color: #333;
+	text-decoration: underline;
+}
+
+.chat .scroll .messages .left a {
+	color: #fff;
+	text-decoration: none;
+}
+
+.chat .scroll .messages .left a:hover {
+	color: #fafafa;
+	text-decoration: underline;
+}
+
+.Smilie {
+	display: inline-block;
+	margin: 1px;
+}
+
+.InputError {
+	position: relative;
+	display: inline-block;
+	top: 5px;
+}
+
+.message .tags {
+	text-align: right;
+	margin-right: 50px;
+}
+
+.message .tag {
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	background: #2C7D93;
+	padding: 3px 5px;
+	display: inline-block;
+}
+
+.add-response.tags .tag {
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	background: #e5e5e5;
+	padding: 2px 8px;
+	margin: 3px;
+	line-height: 25px;
+	display: inline-block;
+}
+
+.add-response.tags .tag .delete {
+	background:url(../images/DeleteTag.png) no-repeat;
+	width:10px;
+	height:10px;
+	opacity:0.1;
+	display:inline-block;
+	margin-left:4px;
+}
+
+.add-response.tags .tag .delete:hover {
+	opacity:0.3;
+}
+
+.add-response.tags {
+	margin-top: 10px;
+	width: 80%;
+}
+
+.add-response.tags .tag-icon {
+	margin-right: 3px;
+}
+
+.message .tag .icon, .tag-icon {
+	position: relative;
+	top: 2px;
+	background: url(../images/Tag.png) no-repeat;
+	width: 16px;
+	height: 16px;
+	display: inline-block;
+}
+
+.message .tag .text {
+	margin-left: 3px;
+}
+
+.message .tag:hover {
+	background: #00637D;
+}
+
+.responses-menu {
+	position: relative;
+	background: #f0f0f0;
+	height: 0;
+	display: none;
+	text-align: left;
+	padding: 10px;
+	overflow: hidden;
+	
+}
+
+	.responses-menu div.close {
+		position: absolute;
+		background: url('../images/CloseButton.png') no-repeat;
+		width: 30px;
+		height: 30px;
+		top: -5px;
+		right: 10px;
+		margin: 0 auto;
+		cursor: pointer;
+		opacity: 0.1;
+	}
+	
+	.responses-menu div.close:hover {
+		opacity: 0.2;
+	}
+
+.response {
+	position: relative;
+	background: transparent;
+	padding: 5px;
+	margin-bottom: 10px;
+	overflow: hidden;
+}
+
+.response img {
+	margin-bottom: 10px;
+}
+
+	#responses .label {
+		margin: 3px !important;
+		display: inline-block;
+	}
+
+	.response .edit {
+		background: url(../images/Edit.png) no-repeat;
+		display: inline-block;
+		width: 16px;
+		height: 16px;
+		opacity: 0;
+		margin: 0 5px;
+		float: right;
+	}
+
+	.response .send {
+		position: absolute;
+		background: url(../images/Chat.png) no-repeat;
+		display: inline-block;
+		width: 56px;
+		height: 25px;
+		opacity: 0;
+		right: 0;
+		bottom: 10px;
+		float: right;
+	}
+
+	.response .tags {
+		margin: 10px 50px 10px 0;
+	}
+
+	.response .tag {
+		color: #666;
+		margin-left: 5px;
+	}
+
+.response:hover {
+	background: #ccc;
+}
+
+.chat-list-heading {
+	font-family: 'Segoe UI Light', 'Segoe WP Light', 'Helvetica Neue', RobotoLight, sans-serif !important;
+	font-size: 20px !important;
+	line-height: 20px;
+	color: #787878;
+	font-weight: 100 !important;
+	margin: 5px 5px 5px 0;
+	cursor: pointer;
+}
+
+.expander {
+	background: url(../images/AdminSprite.png) no-repeat;
+	width: 10px;
+	height: 6px;
+	background-position: -378px -189px;
+	display: inline-block;
+	line-height: 20px;
+	margin: 5px 3px;
+	cursor: pointer;
+}
+
+.message-alert {
+	font-family: 'Segoe UI Light', 'Segoe WP Light', 'Helvetica Neue', RobotoLight, sans-serif;
+	font-size: 11px;
+	position: absolute;
+	background-color: #f56c7e;
+	border: 1px solid #ce4f5e;
+	padding: 2px 5px 1px;
+	margin-left: -2px;
+	margin-top: -16px;
+	border-radius: 100px;
+	color: #fff !important;
+	text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+	line-height: 12px;
+	right: 10px;
+	bottom: 45px;
+	-webkit-box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.4);
+	-moz-box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.4);
+	-o-box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.4);
+	box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.4);
+}
+.red {
+	background-color: #f56c7e;
+	border-color: #ce4f5e;
+}
+
+.visitor {
+	padding: 5px;
+	width: 200px;
+	position: relative;
+	z-index: 20;
+	clear: both;
+}
+
+.visitor:hover {
+	background: #E5E5E5; /* #CCC */
+}
+
+.visitor .name {
+	font-size: 20px;
+	line-height: normal;
+}
+
+.no-visitor {
+	padding: 10px 5px;
+	width: 200px;
+	position: relative;
+	z-index: 20;
+}
+
+.no-visitor span {
+	font-family: 'Segoe UI Light', 'Segoe WP Light', 'Helvetica Neue', RobotoLight, sans-serif;
+	font-weight: 100;
+	font-size: 20px;
+	clear: right;
+	display: block;
+	color: #999;
+}
+
+.visitor .image {
+	background: url('../image.php?SIZE=40');
+	width: 40px;
+	height: 40px;
+	float: left;
+	margin: 5px 10px;
+	display: block
+}
+
+.visitor .details {
+	font-family: 'Segoe UI Light', 'Segoe WP Light', 'Helvetica Neue', RobotoLight, sans-serif;
+	font-weight: 100;
+	clear: right;
+	display: block;
+	top: 3px;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+	.twofactor {
+		margin-left: 30px;
+	}
+
+	.twofactor img {
+		margin: 10px 25px;
+		opacity: 0.5;
+	}
+	
+	.twofactor img:hover {
+		opacity: 1.0;
+	}
+	
+	.twofactor .factor span {
+		font-family: 'Segoe UI Light', 'Segoe WP Light', 'Helvetica Neue', RobotoLight, sans-serif;
+		font-size: 12px;
+		color: #666;
+		text-transform: uppercase;
+		opacity: 0;
+	}
+
+	.login label, .login span {
+		display: block;
+		font-family: Segoe UI Light, Segoe WP Light, Helvetica Neue, Roboto, sans-serif;
+		font-size: 20px;
+		font-weight: 100;
+		color: #666;
+		margin: 7px;
+	}
+	
+	.login input[type=text], .login input[type=password], .login select {
+		margin: 0 3px 5px 3px;
+		font-family: Segoe UI Light, Segoe WP Light, Helvetica Neue, Roboto, sans-serif;
+		font-size: 24px;
+		line-height: 24px;
+		font-weight: 100;
+		color: #666;
+		width: 300px;
+		height: 24px;
+	}
+	
+.metro-pivot .headers {
+	margin-left: 20px;
+}
+
+#account-upload.fade {
+	-webkit-transition: all 0.3s ease-out;
+	-moz-transition: all 0.3s ease-out;
+	-ms-transition: all 0.3s ease-out;
+	-o-transition: all 0.3s ease-out;
+	transition: all 0.3s ease-out;
+	opacity: 1;
+}
+
+.cell-inner {
+	height: 190px;
+	margin: 5px;
+	padding: 5px;
+}
+.cell-left {
+	width: 60px;
+	height: 100%;
+	margin-left: 25px;
+	float: left;
+}
+.cell-main {
+	font-family: 'Segoe UI Light', 'Segoe WP Light', 'Helvetica Neue', RobotoLight, sans-serif;
+	margin-left: 100px;
+	font-weight: 100;
+	line-height: normal;
+}
+.cell-main h2 {
+	font-family: 'Segoe UI Light', 'Segoe WP Light', 'Helvetica Neue', RobotoLight, sans-serif;
+	font-size: 20px;
+	font-weight: 100;
+	line-height: 20px;
+	color: #666;
+}
+.cell-heading {
+	font-family: 'Segoe UI Light', 'Segoe WP Light', 'Helvetica Neue', RobotoLight, sans-serif;
+	font-weight: 100;
+	font-size: 20px;
+	line-height: 20px;
+	clear: right;
+	display: block;
+}
+.cell-details {
+	font-family: 'Segoe UI Light', 'Segoe WP Light', 'Helvetica Neue', RobotoLight, sans-serif;
+	font-weight: 100;
+	clear: right;
+	display: block;
+	top: 3px;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
+.rating {
+	display: inline-block;
+	width: 15px;
+	height: 13px;
+	background: url('../images/Rating.png') no-repeat;
+}
+.rating-highlight {
+	display: inline-block;
+	width: 15px;
+	height: 13px;
+	background: url('../images/RatingHighlight.png') no-repeat;
+}
+.rating-disabled {
+	opacity: 0.5;
+}
+.rating.histogram {
+	position: relative;
+	width: 250px;
+	background: #e3e3e3;
+	height: 15px;
+	display: inline-block;
+	float: right;
+}
+.rating.histogram .value {
+	display: inline-block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: #00BBCC;
+	height: 100%;
+}

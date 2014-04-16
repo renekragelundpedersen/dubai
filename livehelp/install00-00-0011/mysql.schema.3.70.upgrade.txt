@@ -1,0 +1,4 @@
+# Adjust Operators
+ALTER TABLE `prefix_users` CHANGE `password` `password` TEXT CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;
+INSERT INTO `prefix_settings` (`name`, `value`) VALUES ('ChatWindowWidth', '625');
+INSERT INTO `prefix_settings` (`name`, `value`) VALUES ('ChatWindowHeight', '435');

@@ -1,0 +1,29 @@
+DROP TABLE IF EXISTS `prefix_activity`;
+
+DROP TABLE IF EXISTS `prefix_administration`;
+
+DROP TABLE IF EXISTS `prefix_callback`;
+
+DROP TABLE IF EXISTS `prefix_chats`;
+
+DROP TABLE IF EXISTS `prefix_countries`;
+
+DROP TABLE IF EXISTS `prefix_custom`;
+
+DROP TABLE IF EXISTS `prefix_ip2country`;
+
+DROP TABLE IF EXISTS `prefix_messages`;
+
+DROP TABLE IF EXISTS `prefix_orderproducts`;
+
+DROP TABLE IF EXISTS `prefix_orders`;
+
+DROP TABLE IF EXISTS `prefix_products`;
+
+DROP TABLE IF EXISTS `prefix_requests`;
+
+DROP TABLE IF EXISTS `prefix_responses`;
+
+DROP TABLE IF EXISTS `prefix_settings`;
+
+DROP TABLE IF EXISTS `prefix_users`;

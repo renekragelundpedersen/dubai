@@ -1,0 +1,85 @@
+body {
+	font:normal 13px Arial, Helvetica, sans-serif;
+	color:#666;
+	line-height:16px;
+}
+body h1 {
+	margin:0 0 10px 10px;
+	padding:0;
+	font:normal 20px Arial, Helvetica, sans-serif;
+	color:#666;
+}
+div#container {
+	padding:0;
+	background:url(images/bg-m-two.png) no-repeat 60% 30px;
+	height:255px;
+	width:380px;
+}
+div#container p {
+	font:normal 15px Arial, Helvetica, sans-serif;
+	color:#CCC;
+	padding-bottom:10px;
+}
+form#user-registration ul, form ul {
+	width:430px;
+	margin:0;
+	float:left;
+	padding:10px;
+}
+form ul li {
+	width:430px;
+	margin:0;
+	padding:6px 0 8px;
+	float:left;
+	list-style:none;
+}
+form li label {
+	width:140px;
+	float:left;
+	color:#666;
+	padding:3px 0 0 0;
+	font:normal 12px Arial, Helvetica, sans-serif;
+}
+form ul li input, form ul li textarea {
+	color:#fff;
+	background-color:#fff;
+	border:1px solid #CCC;
+	width:220px;
+	float:left;
+	padding:4px;
+	color:#666;
+	font:normal 12px Arial, Helvetica, sans-serif;
+}
+form ul li input.btn-submit {
+	border:0;
+	background:0;
+	width:71px;
+	height:24px;
+}
+form ul li input.submit{
+	border:0;
+	width:89px;
+	height:30px;
+	margin-left:135px;
+}
+form ul li select{
+	width:230px;
+	border:1px solid #CCC;
+	padding:4px;
+	color:#666;
+	font:normal 12px Arial, Helvetica, sans-serif;
+}
+p.success-msg{
+	border:0 !important;	
+}
+div#container p.error-msg{
+	font:normal 12px Arial, Helvetica, sans-serif;
+	color:#c00;
+	margin:0;
+	padding:0;
+}
+h1.title-box{
+	font:bold 18px Arial, Helvetica, sans-serif; 
+	color:#036; 
+	margin:20px 20px 0 10px;
+}

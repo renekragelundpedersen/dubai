@@ -1,0 +1,31 @@
+
+#login {
+width: 238px;
+margin: 0 auto;
+padding:20px 0 0 43px;
+}
+
+#login label {
+display:block;
+font-size:12px;
+padding-bottom:5px;
+text-align:right;
+}
+#login label em{
+width:80px;
+display:block;
+float:left;
+font-style: normal;
+}
+#login input {
+width:146px;
+height:22px;
+border:1px solid #ccc;
+}
+
+#login input.submit {
+width:auto;
+height:auto;
+border:1px solid #ccc;
+float:right;
+}

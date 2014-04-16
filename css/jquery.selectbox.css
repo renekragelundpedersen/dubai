@@ -1,0 +1,76 @@
+@CHARSET "UTF-8";
+
+.jquery-selectbox {
+	position: relative;
+	height: 26px;
+	z-index: 0;
+	float: left;
+	display: inline;
+	margin:0px 4px 0px 0;
+	font-size:12px;
+	font-family:'HelveticaNeueMedium',Arial,Helvetica,sans-serif;
+	color: #909090;
+	padding:0px;
+	background:url(../images/dd_arrow.gif) no-repeat right 8px;
+	cursor:pointer;
+	width:106px !important;
+}
+.jquery-selectbox.selecthover {
+	z-index: 700;
+}	
+.jquery-selectbox .jquery-selectbox-currentItem {
+	padding: 8px 0 4px 2px;
+	white-space: nowrap;
+	display: block;
+	overflow: hidden;
+	height:auto;
+	width:auto;
+	cursor:pointer;
+	 
+}
+
+.jquery-selectbox .jquery-selectbox-list {
+	display: none;
+	position: absolute;
+	top:23px;
+	padding: 2px;
+	left: 0px;
+	background: #ECECEC;
+	width: 107px;
+	height: 128px;
+	overflow-x: hidden;
+	overflow-y: auto;
+	z-index: 1000;
+	cursor:pointer;
+
+}
+.jquery-selectbox .jquery-selectbox-moreButton {
+	/*
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	*/
+	float: right;
+	width:24px;
+	height:20px;
+	cursor: pointer;
+}
+.jquery-selectbox .jquery-selectbox-moreButton.morebuttonhover {
+
+}
+
+.jquery-selectbox .jquery-selectbox-item.listelementhover {
+	color: #CCCCCC;
+}
+.jquery-selectbox .jquery-selectbox-item {
+	display: block;
+	cursor: default;
+	padding:4px;
+	cursor:pointer;
+}
+
+
+/** ERROR classes **/
+form .error .jquery-selectbox {
+	color: #d00;
+}

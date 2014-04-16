@@ -1,0 +1,211 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="mortgage_calculator_files/demo1.css" type="text/css">
+<script type="text/javascript" src="mortgage_calculator_files/mootools.js"></script>
+<script type="text/javascript" src="mortgage_calculator_files/demo1.js"></script>
+<title>Metropole Properties - Mortgage Calculator</title>
+<script>
+
+	function addCommas(nStr,tarea){
+
+		nStr=String(nStr);
+
+		nStr=nStr.replace(/,/g,"");
+
+		nStr=nStr.replace(/\s/g,"");
+
+
+
+		x = nStr.split('.');
+
+		x1 = x[0];
+
+		x2 = x.length > 1 ? '.' + x[1] : '';
+
+        var rgx = /(\d+)(\d{3})/;
+
+        while (rgx.test(x1)) {
+
+                x1 = x1.replace(rgx, '$1' + ',' + '$2');
+
+        }
+
+		if (tarea!=""){
+
+			eval("document.getElementById('"+tarea+"').value=x1 + x2");
+
+		}else{
+
+			result=x1+x2;
+
+			return "AED "+result;
+
+		}
+
+        
+
+	}
+
+	function floor(number)
+
+	{
+
+	  return Math.floor(number*Math.pow(10,2))/Math.pow(10,2);
+
+	}
+
+
+
+	function dosum(IR,YR,LA,DP,AT,AI)
+
+	{
+
+	  var mi = IR / 1200;
+
+	  var base = 1;
+
+	  var mbase = 1 + mi;
+
+	  for (i=0; i<YR * 12; i++)
+
+	  {
+
+	    base = base * mbase
+
+	  }
+
+	  
+
+	  LA =LA-DP;
+
+	 var dasum = LA * mi / ( 1 - (1/base)) + AT / 12 + AI / 12;
+
+	 var result= floor(dasum);
+
+	 result = addCommas(result,'');
+
+	 var obj = document.getElementById('computedM');
+
+obj.firstChild?obj.firstChild.data=result:obj.appendChild(document.createTextNode(result));
+
+	}
+
+	
+
+	
+
+	function computeMonthly(){
+
+		var loan=document.getElementById('LOAN').value;
+
+		var dp=document.getElementById('DP').value;
+
+		var yr=document.getElementById('yr').value;
+
+		var prate=document.getElementById('prate').value;
+
+		loan=loan.replace(/,/g,"");
+
+		loan=loan.replace(/\s/g,"");
+
+		dp=dp.replace(/,/g,"");
+
+		dp=dp.replace(/\s/g,"");
+
+		
+
+		dosum(prate,yr,loan,dp,0,0);
+
+	}
+</script>
+<style>
+h2 {
+    border-bottom: 2px solid #8FCBE0;
+    color: #1F3157;
+    float: left;
+    font-family: "helvetica_neue_ltregular",Arial,Helvetica,sans-serifArial,Helvetica,sans-serif;
+    font-size: 16px;
+    margin: 0;
+    padding: 5px;
+    text-transform: uppercase;
+    width: 93%;
+	margin:10px 0 0 10px;
+}
+</style>
+</head>
+<body style="margin: 0px;">
+<h2>Mortgage Calculator</h2>
+<table class="tabcolorcalcmain" border="0" style="float:left; margin:0;">
+  <tbody>
+    <tr>
+      <!--<td></td-->
+      <td width="722"><table class="tabcolorcalc" border="0" cellpadding="0" cellspacing="0">
+          <tbody>
+            <tr valign="top">
+              <td height="264" valign="top"><table cellpadding="2">
+                  <tbody>
+                    <tr>
+                      <td valign="top"><div class="calchead">PROPERTY VALUE (AED)</div></td>
+                    </tr>
+                    <tr>
+                      <td valign="top"><input class="help1calc" id="LOAN" value="0" name="LOAN" onkeyup="addCommas(this.value,'LOAN');computeMonthly();" type="text" /></td>
+                    </tr>
+                    <tr>
+                      <td valign="top"><div class="calchead">DOWNPAYMENT (AED)</div></td>
+                    </tr>
+                    <tr>
+                      <td valign="top"><input class="help1calc" id="DP" value="0" name="DP" onkeyup="addCommas(this.value,'DP');computeMonthly();" type="text" /></td>
+                    </tr>
+                  </tbody>
+                </table></td>
+              <td><table cellpadding="2">
+                  <tbody>
+                    <tr>
+                      <td valign="top"><div class="calchead">Finance Terms (years)</div></td>
+                    </tr>
+                    <tr>
+                      <td valign="top"><div id="myElement" class="slider">
+                          <div style="position: relative; left: 102px;" class="knob"></div>
+                        </div>
+                        <br />
+                        <div id="fontSize" name="fontSize"><strong>16</strong></div>
+                        <input name="yr" id="yr" value="16" type="hidden" /></td>
+                    </tr>
+                    <tr>
+                      <td valign="top"><div class="calchead">Profit Rate(%)</div></td>
+                    </tr>
+                    <tr>
+                      <td height="89"  valign="top"><div id="myElement2" class="slider">
+                          <div style="position: relative; left: 36px;" class="knob"></div>
+                        </div>
+                        <br />
+                        <div id="fontSize2" name="fontSize2"><strong>5.9</strong></div>
+                        <input name="prate" id="prate" value="5.9" type="hidden" /></td>
+                    </tr>
+                  </tbody>
+                </table></td>
+              <td valign="top"><table cellpadding="2">
+                  <tbody>
+                    <tr>
+                      <td valign="top"><div class="installment">Your monthly installment will be</div></td>
+                    </tr>
+                    <tr>
+                      <td valign="top"><div id="computedM" class="calcmain">AED 1,994.77</div></td>
+                    </tr>
+                  </tbody>
+                </table></td>
+            </tr>
+          </tbody>
+        </table></td>
+      <td width="99">&nbsp;</td>
+    </tr>
+    <tr>
+      <td><small>"These rates are solely for indication purpose. Innovate Real Estate accepts no liability for these indicative rates, or for the consequences of any actions taken on the basis of the information provided, unless that information is subsequently confirmed in writing"</small></td>
+      <td>&nbsp;</td>
+    </tr>
+  </tbody>
+</table>
+</body>
+</html>

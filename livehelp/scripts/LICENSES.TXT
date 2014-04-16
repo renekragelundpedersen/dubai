@@ -1,0 +1,361 @@
+/*
+ * jQuery JSON Plugin
+ * version: 2.3 (2011-09-17)
+ *
+ * This document is licensed as free software under the terms of the
+ * MIT License: http://www.opensource.org/licenses/mit-license.php
+ *
+ * Brantley Harris wrote this plugin. It is based somewhat on the JSON.org
+ * website's http://www.json.org/json2.js, which proclaims:
+ * "NO WARRANTY EXPRESSED OR IMPLIED. USE AT YOUR OWN RISK.", a sentiment that
+ * I uphold.
+ *
+ * It is also influenced heavily by MochiKit's serializeJSON, which is
+ * copyrighted 2005 by Bob Ippolito.
+ */
+ 
+/*
+ * jQuery JSONP Core Plugin 2.2.1 (2012-02-04)
+ *
+ * http://code.google.com/p/jquery-jsonp/
+ *
+ * Copyright (c) 2011 Julian Aubourg
+ *
+ * This document is licensed as free software under the terms of the
+ * MIT License: http://www.opensource.org/licenses/mit-license.php
+ */
+ 
+/*
+ * ----------------------------- JSTORAGE -------------------------------------
+ * Simple local storage wrapper to save data on the browser side, supporting
+ * all major browsers - IE6+, Firefox2+, Safari4+, Chrome4+ and Opera 10.5+
+ *
+ * Copyright (c) 2010 Andris Reinman, andris.reinman@gmail.com
+ * Project homepage: www.jstorage.info
+ *
+ * Licensed under MIT-style license:
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
+
+/*
+ * jQuery UI 1.8.16
+ *
+ * Copyright 2011, AUTHORS.txt (http://jqueryui.com/about)
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ * http://jquery.org/license
+ *
+ * http://docs.jquery.com/UI
+ */
+ 
+/*
+ * jQuery UI Effects 1.8.16
+ *
+ * Copyright 2011, AUTHORS.txt (http://jqueryui.com/about)
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ * http://jquery.org/license
+ *
+ * http://docs.jquery.com/UI/Effects/
+ */
+ 
+/*
+ * jQuery UI Effects Blind 1.8.16
+ *
+ * Copyright 2011, AUTHORS.txt (http://jqueryui.com/about)
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ * http://jquery.org/license
+ *
+ * http://docs.jquery.com/UI/Effects/Blind
+ *
+ * Depends:
+ *	jquery.effects.core.js
+ */
+ 
+/*
+ * jQuery UI Effects Bounce 1.8.16
+ *
+ * Copyright 2011, AUTHORS.txt (http://jqueryui.com/about)
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ * http://jquery.org/license
+ *
+ * http://docs.jquery.com/UI/Effects/Bounce
+ *
+ * Depends:
+ *	jquery.effects.core.js
+ */
+ 
+/*
+ * jQuery UI Effects Clip 1.8.16
+ *
+ * Copyright 2011, AUTHORS.txt (http://jqueryui.com/about)
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ * http://jquery.org/license
+ *
+ * http://docs.jquery.com/UI/Effects/Clip
+ *
+ * Depends:
+ *	jquery.effects.core.js
+ */
+ 
+/*
+ * jQuery UI Effects Drop 1.8.16
+ *
+ * Copyright 2011, AUTHORS.txt (http://jqueryui.com/about)
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ * http://jquery.org/license
+ *
+ * http://docs.jquery.com/UI/Effects/Drop
+ *
+ * Depends:
+ *	jquery.effects.core.js
+ */
+ 
+/*
+ * jQuery UI Effects Explode 1.8.16
+ *
+ * Copyright 2011, AUTHORS.txt (http://jqueryui.com/about)
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ * http://jquery.org/license
+ *
+ * http://docs.jquery.com/UI/Effects/Explode
+ *
+ * Depends:
+ *	jquery.effects.core.js
+ */
+ 
+/*
+ * jQuery UI Effects Fade 1.8.16
+ *
+ * Copyright 2011, AUTHORS.txt (http://jqueryui.com/about)
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ * http://jquery.org/license
+ *
+ * http://docs.jquery.com/UI/Effects/Fade
+ *
+ * Depends:
+ *	jquery.effects.core.js
+ */
+ 
+/*
+ * jQuery UI Effects Fold 1.8.16
+ *
+ * Copyright 2011, AUTHORS.txt (http://jqueryui.com/about)
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ * http://jquery.org/license
+ *
+ * http://docs.jquery.com/UI/Effects/Fold
+ *
+ * Depends:
+ *	jquery.effects.core.js
+ */
+ 
+/*
+ * jQuery UI Effects Highlight 1.8.16
+ *
+ * Copyright 2011, AUTHORS.txt (http://jqueryui.com/about)
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ * http://jquery.org/license
+ *
+ * http://docs.jquery.com/UI/Effects/Highlight
+ *
+ * Depends:
+ *	jquery.effects.core.js
+ */
+ 
+/*
+ * jQuery UI Effects Pulsate 1.8.16
+ *
+ * Copyright 2011, AUTHORS.txt (http://jqueryui.com/about)
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ * http://jquery.org/license
+ *
+ * http://docs.jquery.com/UI/Effects/Pulsate
+ *
+ * Depends:
+ *	jquery.effects.core.js
+ */
+ 
+/*
+ * jQuery UI Effects Scale 1.8.16
+ *
+ * Copyright 2011, AUTHORS.txt (http://jqueryui.com/about)
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ * http://jquery.org/license
+ *
+ * http://docs.jquery.com/UI/Effects/Scale
+ *
+ * Depends:
+ *	jquery.effects.core.js
+ */
+ /*
+ * jQuery UI Effects Shake 1.8.16
+ *
+ * Copyright 2011, AUTHORS.txt (http://jqueryui.com/about)
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ * http://jquery.org/license
+ *
+ * http://docs.jquery.com/UI/Effects/Shake
+ *
+ * Depends:
+ *	jquery.effects.core.js
+ */
+ 
+/*
+ * jQuery UI Effects Slide 1.8.16
+ *
+ * Copyright 2011, AUTHORS.txt (http://jqueryui.com/about)
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ * http://jquery.org/license
+ *
+ * http://docs.jquery.com/UI/Effects/Slide
+ *
+ * Depends:
+ *	jquery.effects.core.js
+ */
+ 
+/*
+ * jQuery UI Effects Transfer 1.8.16
+ *
+ * Copyright 2011, AUTHORS.txt (http://jqueryui.com/about)
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ * http://jquery.org/license
+ *
+ * http://docs.jquery.com/UI/Effects/Transfer
+ *
+ * Depends:
+ *	jquery.effects.core.js
+ */
+ 
+/*
+ * jQuery.ScrollTo
+ * Copyright (c) 2007-2008 Ariel Flesler - aflesler(at)gmail(dot)com | http://flesler.blogspot.com
+ * Dual licensed under MIT and GPL.
+ * Date: 9/11/2008
+ *
+ * @projectDescription Easy element scrolling using jQuery.
+ * http://flesler.blogspot.com/2007/10/jqueryscrollto.html
+ * Tested with jQuery 1.2.6. On FF 2/3, IE 6/7, Opera 9.2/5 and Safari 3. on Windows.
+ *
+ * @author Ariel Flesler
+ * @version 1.4
+ *
+ * @id jQuery.scrollTo
+ * @id jQuery.fn.scrollTo
+ * @param {String, Number, DOMElement, jQuery, Object} target Where to scroll the matched elements.
+ *	  The different options for target are:
+ *		- A number position (will be applied to all axes).
+ *		- A string position ('44', '100px', '+=90', etc ) will be applied to all axes
+ *		- A jQuery/DOM element ( logically, child of the element to scroll )
+ *		- A string selector, that will be relative to the element to scroll ( 'li:eq(2)', etc )
+ *		- A hash { top:x, left:y }, x and y can be any kind of number/string like above.
+ * @param {Number} duration The OVERALL length of the animation, this argument can be the settings object instead.
+ * @param {Object,Function} settings Optional set of settings or the onAfter callback.
+ *	 @option {String} axis Which axis must be scrolled, use 'x', 'y', 'xy' or 'yx'.
+ *	 @option {Number} duration The OVERALL length of the animation.
+ *	 @option {String} easing The easing method for the animation.
+ *	 @option {Boolean} margin If true, the margin of the target element will be deducted from the final position.
+ *	 @option {Object, Number} offset Add/deduct from the end position. One number for both axes or { top:x, left:y }.
+ *	 @option {Object, Number} over Add/deduct the height/width multiplied by 'over', can be { top:x, left:y } when using both axes.
+ *	 @option {Boolean} queue If true, and both axis are given, the 2nd axis will only be animated after the first one ends.
+ *	 @option {Function} onAfter Function to be called after the scrolling ends. 
+ *	 @option {Function} onAfterFirst If queuing is activated, this function will be called after the first scrolling ends.
+ * @return {jQuery} Returns the same jQuery object, for chaining.
+ *
+ * @desc Scroll to a fixed position
+ * @example $('div').scrollTo( 340 );
+ *
+ * @desc Scroll relatively to the actual position
+ * @example $('div').scrollTo( '+=340px', { axis:'y' } );
+ *
+ * @dec Scroll using a selector (relative to the scrolled element)
+ * @example $('div').scrollTo( 'p.paragraph:eq(2)', 500, { easing:'swing', queue:true, axis:'xy' } );
+ *
+ * @ Scroll to a DOM element (same for jQuery object)
+ * @example var second_child = document.getElementById('container').firstChild.nextSibling;
+ *			$('#container').scrollTo( second_child, { duration:500, axis:'x', onAfter:function(){
+ *				alert('scrolled!!');																   
+ *			}});
+ *
+ * @desc Scroll on both axes, to different values
+ * @example $('div').scrollTo( { top: 300, left:'+=200' }, { axis:'xy', offset:-20 } );
+ */
+ 
+ /*
+ * fancyBox - jQuery Plugin
+ * version: 2.0.2 (28/11/2011)
+ * @requires jQuery v1.6 or later
+ *
+ * Examples at http://fancyapps.com/fancybox/
+ * License: www.fancyapps.com/fancybox/#license
+ *
+ * Copyright 2011 Janis Skarnelis - janis@fancyapps.com
+ *
+ */
+ 
+// ----------------------------------------------------------------------------
+// Buzz, a Javascript HTML5 Audio library
+// v 1.0.4 beta
+// Licensed under the MIT license.
+// http://buzz.jaysalvat.com/
+// ----------------------------------------------------------------------------
+// Copyright (C) 2011 Jay Salvat
+// http://jaysalvat.com/
+// ----------------------------------------------------------------------------
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files ( the "Software" ), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in
+// all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+// THE SOFTWARE.
+// ----------------------------------------------------------------------------
+ 
+/*
+ * bubbletip
+ *
+ * Copyright (c) 2009-2010, UhLeeKa.
+ * Version: 
+ *      1.0.6
+ * Licensed under the GNU Lesser General Public License:
+ *     http://www.gnu.org/licenses/lgpl-3.0.html
+ * Author Website: 
+ *     http://www.uhleeka.com
+ * Project Hosting on Google Code: 
+ *     http://code.google.com/p/bubbletip/
+ */
+
+/*
+ * Pulse plugin for jQuery 
+ * ---
+ * @author James Padolsey (http://james.padolsey.com)
+ * @version 0.1
+ * @updated 16-DEC-09
+ * ---
+ * Note: In order to animate color properties, you need
+ * the color plugin from here: http://plugins.jquery.com/project/color
+ * ---
+ * @info http://james.padolsey.com/javascript/simple-pulse-plugin-for-jquery/
+ */

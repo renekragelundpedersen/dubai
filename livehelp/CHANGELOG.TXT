@@ -1,0 +1,81 @@
+Live Help v4.0 Release
+New Features
+---
+Added HTML5 Web Based Adminstration
+Added Statistics / Charts
+Updated Authentication to v4.0 (Bcrypt)
+Added WHMCS Ticket Masking
+Added Google Cloud Messaging Support
+
+
+Bug Fixes
+---
+Resolved Popup Window Disconnect Issue 
+Resolved Switch Popup Window Cache Issue
+Improved Email Functionality
+Improved AES mcrypt Module Detection 
+Resolved Various CSS Conflicts
+Updated jQuery v1.8.0 Library
+Other Minor Bug Fixes and Improvements
+
+
+
+Live Help v3.95 Rev. 7
+Bug Fixes
+----
+Added WHMCS Hook Language Pack Support
+Added Email Parameters Setting
+Improved Embedded Chat CSS Compatibility
+Resolved Web Based Administration Login Issue
+Resolved Security Code Unsupported Validation Issue
+Resolved Installation Operator Account Issue
+Resolved WHMCS Login Case Sensitive Issue
+Resolved WHMCS Hidden Departments Issue
+Resolved WHMCS Cart Issue
+Resolved Close Chat Notification Issue
+
+
+
+Live Help v3.95 Rev. 6
+Bug Fixes
+----
+Resolved jQuery noConflict Errors
+Added jQuery JavaScript Language Pack and Protocol Settings
+Resolved JSON Callback PHP Compatibility Issue
+Added jQuery JavaScript HTTP / HTTPS Protocol Override Setting
+Updated Global / Country Top-Level Domains
+Improved Embedded Chat CSS Compatibility
+Resolved Initiate Chat Position / Accept Button Issue
+Resolved WHMCS Chat Transcript Ticketing Issue
+
+
+
+Live Help v3.95 Rev. 5
+New Features
+---
+Added Embedded Chat
+Added HTML5 Sounds
+Updated Templates for HTML5 Sound Library (Please Update Any Custom Templates)
+Updated Default Templates
+Removed WHMCS Portal Template (Default Template Style Matches WHMCS v5)
+Removed Frames Template
+Updated Joomla and WordPress Modules to v1.60
+Improved Embedded Chat and Popup Window Chat JavaScript
+Improved First Party Cookie Support (Removed Third-Party Cookies)
+Updated WHMCS Hook HTML Code
+Added WHMCS Account Integration
+
+Bug Fixes
+----
+Resolved Security Code GD2 Extension Windows UNC Path Issue
+Resolved XHTML Compliance Issues
+Resolved WHMCS Configuration Whitespace Issue
+Resolved JavaScript Setting Issues
+Resolved IP Address Validation Issue
+Added WordPress w/ Auto Install Plugin (Installs Live Help MySQL Database into the WordPress Database)
+Added jQuery noConflict Option and Chat Tab Slider Options to the WordPress Plugin
+Added PHP mail() From and Return-Path Header Parameters
+Added jQuery Easing Framework
+Added Slider Chat Tab Slider Options to the Joomla Module
+Updated Joomla Module Version 1.6.0
+Updated WordPress Plugin Version 1.60

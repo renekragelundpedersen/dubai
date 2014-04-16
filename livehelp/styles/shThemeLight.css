@@ -1,0 +1,185 @@
+/**
+ * SyntaxHighlighter
+ * http://alexgorbatchev.com/SyntaxHighlighter
+ *
+ * SyntaxHighlighter is donationware. If you are using it, please donate.
+ * http://alexgorbatchev.com/SyntaxHighlighter/donate.html
+ *
+ * @version
+ * 3.0.83 (July 02 2010)
+ * 
+ * @copyright
+ * Copyright (C) 2004-2010 Alex Gorbatchev.
+ *
+ * @license
+ * Dual licensed under the MIT and GPL licenses.
+ */
+.syntaxhighlighter::-webkit-scrollbar-track{
+  visibility: hidden; /* doesn't seem to work */
+}
+.syntaxhighlighter::-webkit-scrollbar{
+  position: absolute;
+  width: 8px;
+  height: 8px;
+}
+
+.syntaxhighlighter::-webkit-scrollbar-button:start:decrement {
+  display: block;
+  width: 5px;
+  height: 5px;
+  background-color: transparent;
+}
+.syntaxhighlighter::-webkit-scrollbar-button:end:increment {
+  display: block;
+  width: 5px;
+  height: 5px;
+  background-color: transparent;
+}
+.syntaxhighlighter::-webkit-scrollbar-track:enabled {
+  background-color: transparent;
+}
+.syntaxhighlighter::-webkit-scrollbar-track-piece {
+  background-color: transparent;
+  border: none;
+  margin: 8px 0 5px 0;
+}
+.syntaxhighlighter::-webkit-scrollbar-thumb:vertical {
+  height: 30px;
+  border: 1px solid rgba(140, 140, 140, .5);
+  background-color: rgba(155, 155, 155, .5);
+  -moz-border-radius: 5px; 
+  -webkit-border-radius: 5px; 
+  border-radius: 5px; 
+  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.2), inset 0 0 1px rgba(255, 255, 255, .8);
+  -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.2), inset 0 0 1px rgba(255, 255, 255, .8);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2), inset 0 0 1px rgba(255, 255, 255, .8);
+  -webkit-transition: background-color .2s;
+  -moz-transition: background-color .2s;
+  transition: background-color .2s;
+}
+.syntaxhighlighter::-webkit-scrollbar-thumb:vertical:active{
+  background-color: rgba(155, 155, 155, 1);
+  border: 1px solid rgba(140, 140, 140, 1);
+}
+.syntaxhighlighter::-webkit-scrollbar-thumb:horizontal {
+  width: 30px;
+  border: 1px solid rgba(140, 140, 140, .5);
+  background-color: rgba(155, 155, 155, .5);
+  -moz-border-radius: 5px; 
+  -webkit-border-radius: 5px; 
+  border-radius: 5px; 
+  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.2), inset 0 0 1px rgba(255, 255, 255, .8);
+  -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.2), inset 0 0 1px rgba(255, 255, 255, .8);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2), inset 0 0 1px rgba(255, 255, 255, .8);
+  -webkit-transition: background-color .2s;
+  -moz-transition: background-color .2s;
+  transition: background-color .2s;
+}
+.syntaxhighlighter::-webkit-scrollbar-thumb:horizontal:active{
+  background-color: rgba(155, 155, 155, 1);
+  border: 1px solid rgba(140, 140, 140, 1);
+}
+.syntaxhighlighter {
+  background-color: #fefefe !important;
+  font-family: "Monaco", monaco, monospace !important;
+  font-size: 13px !important;
+  border-radius: 10px;
+  padding: 10px;
+}
+.syntaxhighlighter .line.alt1 {
+  background-color: #fefefe !important;
+}
+.syntaxhighlighter .line.alt2 {
+  background-color: #fefefe !important;
+}
+.syntaxhighlighter .line:hover {
+  background-color: #f3f3f3 !important;
+}
+.syntaxhighlighter .line.highlighted.alt1, .syntaxhighlighter .line.highlighted.alt2 {
+  background-color: #323e41 !important;
+}
+.syntaxhighlighter .line.highlighted.number {
+  color: #b9bdb6 !important;
+}
+.syntaxhighlighter table caption {
+  color: #b9bdb6 !important;
+}
+.syntaxhighlighter .gutter {
+  color: #afafaf !important;
+}
+.syntaxhighlighter .gutter .line {
+  border-right: 3px solid #435a5f !important;
+}
+.syntaxhighlighter .gutter .line.highlighted {
+  background-color: #435a5f !important;
+  color: #1b2426 !important;
+}
+.syntaxhighlighter.printing .line .content {
+  border: none !important;
+}
+.syntaxhighlighter.collapsed {
+  overflow: visible !important;
+}
+.syntaxhighlighter.collapsed .toolbar {
+  color: #5ba1cf !important;
+  background: black !important;
+  border: 1px solid #435a5f !important;
+}
+.syntaxhighlighter.collapsed .toolbar a {
+  color: #5ba1cf !important;
+}
+.syntaxhighlighter.collapsed .toolbar a:hover {
+  color: #5ce638 !important;
+}
+.syntaxhighlighter .toolbar {
+  color: white !important;
+  background: #435a5f !important;
+  border: none !important;
+}
+.syntaxhighlighter .toolbar a {
+  color: white !important;
+}
+.syntaxhighlighter .toolbar a:hover {
+  color: #e0e8ff !important;
+}
+.syntaxhighlighter .plain, .syntaxhighlighter .plain a {
+  color: #999 !important;
+}
+.syntaxhighlighter .comments, .syntaxhighlighter .comments a {
+  color: #878a85 !important;
+}
+.syntaxhighlighter .string, .syntaxhighlighter .string a {
+  color: #dc6374 !important;
+}
+.syntaxhighlighter .keyword {
+  color: #5ba1cf !important;
+}
+.syntaxhighlighter .preprocessor {
+  color: #435a5f !important;
+}
+.syntaxhighlighter .variable {
+  color: #ffaa3e !important;
+}
+.syntaxhighlighter .value {
+  color: #009900 !important;
+}
+.syntaxhighlighter .functions {
+  color: #ffaa3e !important;
+}
+.syntaxhighlighter .constants {
+  color: #e0e8ff !important;
+}
+.syntaxhighlighter .script {
+  font-weight: bold !important;
+  color: #5ba1cf !important;
+  background-color: none !important;
+}
+.syntaxhighlighter .color1, .syntaxhighlighter .color1 a {
+  color: #d3d769 !important;
+}
+.syntaxhighlighter .color2, .syntaxhighlighter .color2 a {
+  color: white !important;
+}
+.syntaxhighlighter .color3, .syntaxhighlighter .color3 a {
+  color: #ffaa3e !important;
+}

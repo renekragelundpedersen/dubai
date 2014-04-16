@@ -1,0 +1,20 @@
+# Add Cache 
+INSERT INTO `prefix_settings` (`name`, `value`) VALUES ('Template', 'default');
+
+# Activity
+CREATE TABLE IF NOT EXISTS `prefix_activity` (
+  `id` bigint(20) NOT NULL auto_increment,
+  `user` bigint(20) NOT NULL,
+  `session` bigint(20) NOT NULL default '0',
+  `username` varchar(30) NOT NULL,
+  `datetime` datetime NOT NULL,
+  `activity` text NOT NULL,
+  `duration` int(11) NOT NULL default '0',
+  `type` int(11) NOT NULL,
+  `status` int(1) NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM /*!40101 CHARACTER SET=utf8 */;
+
+# Maxmind GeoIP
+ALTER TABLE `prefix_requests` ADD `city` TEXT NOT NULL AFTER `resolution`, ADD `state` TEXT NOT NULL AFTER `city`;
+ALTER TABLE `prefix_requests` CHANGE `country` `country` TEXT CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;

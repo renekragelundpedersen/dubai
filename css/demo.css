@@ -1,0 +1,144 @@
+
+.fork {
+  border:0;
+  position:absolute;
+  top:0;
+  right:0;
+}
+
+.col {
+  width: 320px;
+  float: left;
+  margin-right:32px;
+  margin-bottom: 16px;
+}
+.c3 {
+  margin-right:0;
+}
+
+#css3-animated-example h1 {
+  border-bottom: 1px solid #333;
+  font-size: 32px;
+  color: #fff;
+  padding-bottom: 12px;
+}
+
+#css3-animated-example h2 {
+  margin: 10px 0;
+  color: #000;
+  font-size: 18px;
+  text-shadow: 1px 1px 2px #fff;
+}
+
+#css3-animated-example h3 {
+ background: none;
+    border:none;
+    height:31px;
+    margin:0px;
+    padding: 0px;
+    position: relative;
+    width: 100%;
+	
+  
+}
+
+#css3-animated-example h3 a {
+  background: url(../images/in_searc_down_arw.png)  0 0 no-repeat;
+  display: block;
+  padding: 0px  ;
+  margin: 0;
+  color: #302e2e;
+  text-decoration: none;
+  font-weight: normal;
+  height:31px;
+  width:100%;
+  z-index:500;  
+	position:absolute;	
+	line-height:22px;
+	font-family: 'HelveticaNeueLTRegular',Arial,Helvetica,sans-serif;
+	
+	
+}
+#css3-animated-example h3:hover { }
+#css3-animated-example h3.open  { background:none;
+ }
+#css3-animated-example h3.open a { background: url("../images/in_searc_up_arw.png") no-repeat scroll 0 0 transparent;}
+#css3-animated-example h3 + div { padding: 0px; }
+
+#css3-animated-example h2 + div,
+#css3-animated-example .example {
+  background:none;
+  overflow: hidden;
+  float:left;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  margin-bottom: 20px;
+}
+
+/* Pre hide sections with JavaScript on
+--- */
+#css3-animated-example h3+div {
+  display: none;
+}
+
+/* CSS3 Animation example
+--- */
+ #css3-animated-example h3 + div {
+  height: 0px;
+  padding: 0px;
+  overflow: hidden;
+  margin-top:-28px;
+  margin-left: 1px;
+  background:none;
+  display: block!important;
+  -webkit-transform: translateZ(0);
+  -webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+	-ms-transition:all 0.3s ease;
+	transition: all 0.3s ease;
+}
+
+#css3-animated-example h3.open + div {
+  
+   background:none;
+   float:left;
+   
+}
+#css3-animated-example span.opening_hours {
+    padding:0px 0 2px 10px;
+    text-transform: uppercase;
+	position:absolute;
+	top:14px;
+	left:24px;
+	font-size:12px;
+}
+#css3-animated-example img {
+/*	float:left;
+	margin-right:8px;
+	width:100%;*/
+}
+/* Event example
+--- */
+pre#event-log {
+  background: #fafacc;
+  padding: 10px;
+  display: block;
+}
+
+/* Responsive design
+--- */
+
+#css3-animated-example .content {
+  padding:0px;
+  width:100%;  
+  text-align:left;
+     float: left;
+  
+}
+.accordion_tab{
+	width:269px;
+	float:left;
+	margin-left:13px;
+	}

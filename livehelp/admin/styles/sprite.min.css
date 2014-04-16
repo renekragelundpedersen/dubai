@@ -1,0 +1,130 @@
+.sprite{background:url(../images/AdminSprite.png) no-repeat}.sprite.AcceptButton{width:40px;height:40px;background-position:-497px -173px}.sprite.AccountDragDrop{width:144px;height:91px;background-position:-181px -94px}
+.sprite.Add{width:22px;height:22px;background-position:-66px -388px}.sprite.AddButton{width:40px;height:40px;background-position:-446px -173px}.sprite.Adore{width:16px;height:16px;background-position:-674px -405px}
+.sprite.AdoreSmall{width:24px;height:24px;background-position:-525px -322px}.sprite.Alerts{width:24px;height:24px;background-position:-490px -322px}.sprite.Angry{width:16px;height:16px;background-position:-650px -378px}
+.sprite.AngrySmall{width:24px;height:24px;background-position:-455px -322px}.sprite.Appearance{width:24px;height:24px;background-position:-420px -322px}
+.sprite.BackButton{width:60px;height:60px;background-position:-486px -71px}.sprite.BackButtonWhite{width:60px;height:60px;background-position:-486px -0px}
+.sprite.Block{width:32px;height:32px;background-position:-548px -209px}.sprite.CancelButton{width:40px;height:40px;background-position:-102px -173px}.sprite.Celebrate{width:16px;height:16px;background-position:-650px -351px}
+.sprite.CelebrateSmall{width:24px;height:24px;background-position:-385px -322px}.sprite.Chat{width:56px;height:25px;background-position:-548px -173px}
+.sprite.ChatNotification{width:36px;height:27px;background-position:-0px -252px}.sprite.ChatRating{width:32px;height:32px;background-position:-399px -209px}
+.sprite.ChatTime{width:32px;height:32px;background-position:-356px -209px}.sprite.ChatsTotal{width:32px;height:32px;background-position:-313px -209px}
+.sprite.ChromeSmall{width:16px;height:16px;background-position:-650px -324px}.sprite.CloseButton{width:30px;height:30px;background-position:-47px -252px}
+.sprite.CloseButtonWhite{width:30px;height:30px;background-position:-446px -122px}.sprite.ColorPicker{width:22px;height:22px;background-position:-33px -388px}
+.sprite.Colors{width:170px;height:150px;background-position:-0px -0px}.sprite.Cool{width:16px;height:16px;background-position:-667px -297px}.sprite.CoolSmall{width:24px;height:24px;background-position:-350px -322px}
+.sprite.Copy{width:16px;height:16px;background-position:-667px -270px}.sprite.CrossSmall{width:16px;height:16px;background-position:-656px -243px}.sprite.Cry{width:16px;height:16px;background-position:-651px -216px}
+.sprite.CrySmall{width:24px;height:24px;background-position:-315px -322px}.sprite.Cursor{width:11px;height:11px;background-position:-678px -189px}.sprite.Database{width:24px;height:24px;background-position:-280px -322px}
+.sprite.DeleteButton{width:40px;height:40px;background-position:-51px -173px}.sprite.DeleteTag{width:10px;height:10px;background-position:-336px -189px}
+.sprite.Dizzy{width:16px;height:16px;background-position:-651px -189px}.sprite.DizzySmall{width:24px;height:24px;background-position:-245px -322px}.sprite.Edit{width:16px;height:16px;background-position:-669px -162px}
+.sprite.EditButton{width:40px;height:40px;background-position:-0px -173px}.sprite.Email{width:24px;height:24px;background-position:-210px -322px}.sprite.Error{width:25px;height:25px;background-position:-391px -252px}
+.sprite.File-Transfer{width:24px;height:24px;background-position:-175px -322px}.sprite.FirefoxSmall{width:16px;height:16px;background-position:-662px -135px}
+.sprite.Frown{width:16px;height:16px;background-position:-672px -108px}.sprite.FrownSmall{width:24px;height:24px;background-position:-140px -322px}.sprite.General{width:24px;height:24px;background-position:-105px -322px}
+.sprite.HTML-Code{width:24px;height:24px;background-position:-70px -322px}.sprite.Hysterical{width:16px;height:16px;background-position:-672px -81px}.sprite.HystericalSmall{width:24px;height:24px;background-position:-35px -322px}
+.sprite.Icon{width:32px;height:32px;background-position:-270px -209px}.sprite.Images{width:24px;height:24px;background-position:-0px -322px}.sprite.Impish{width:16px;height:16px;background-position:-672px -54px}
+.sprite.ImpishSmall{width:24px;height:24px;background-position:-578px -287px}.sprite.Initiate-Chat{width:24px;height:24px;background-position:-543px -287px}
+.sprite.InternetExplorerSmall{width:16px;height:16px;background-position:-672px -27px}.sprite.Kissed{width:16px;height:16px;background-position:-672px -0px}
+.sprite.KissedSmall{width:24px;height:24px;background-position:-508px -287px}.sprite.Laugh{width:16px;height:16px;background-position:-648px -647px}.sprite.LaughSmall{width:24px;height:24px;background-position:-473px -287px}
+.sprite.MessageNotification{width:36px;height:23px;background-position:-88px -252px}.sprite.Mobile{width:24px;height:50px;background-position:-192px -209px}
+.sprite.Money{width:16px;height:16px;background-position:-621px -647px}.sprite.MoneySmall{width:24px;height:24px;background-position:-438px -287px}.sprite.NetscapeSmall{width:16px;height:16px;background-position:-594px -647px}
+.sprite.OperaSmall{width:16px;height:16px;background-position:-567px -647px}.sprite.Privacy{width:24px;height:24px;background-position:-403px -287px}.sprite.Proxy{width:24px;height:24px;background-position:-368px -287px}
+.sprite.Rating{width:15px;height:13px;background-position:-675px -456px}.sprite.RatingHighlight{width:15px;height:13px;background-position:-675px -432px}
+.sprite.Sad{width:16px;height:16px;background-position:-540px -647px}.sprite.SadSmall{width:24px;height:24px;background-position:-333px -287px}.sprite.SafariSmall{width:16px;height:16px;background-position:-513px -647px}
+.sprite.SaveButton{width:40px;height:40px;background-position:-557px -122px}.sprite.Search{width:22px;height:22px;background-position:-0px -388px}.sprite.SendButton{width:50px;height:50px;background-position:-336px -122px}
+.sprite.SendButtonHover{width:50px;height:50px;background-position:-557px -61px}.sprite.Shock{width:16px;height:16px;background-position:-486px -647px}
+.sprite.ShockSmall{width:24px;height:24px;background-position:-298px -287px}.sprite.Sleep{width:16px;height:16px;background-position:-459px -647px}.sprite.SleepSmall{width:24px;height:24px;background-position:-263px -287px}
+.sprite.Smartphone{width:28px;height:50px;background-position:-153px -209px}.sprite.Smile{width:16px;height:16px;background-position:-432px -647px}.sprite.SmileSmall{width:24px;height:24px;background-position:-228px -287px}
+.sprite.Smilies{width:22px;height:22px;background-position:-560px -355px}.sprite.SmiliesHover{width:22px;height:22px;background-position:-560px -322px}
+.sprite.Startup{width:24px;height:24px;background-position:-193px -287px}.sprite.Stop{width:16px;height:16px;background-position:-405px -647px}.sprite.StopSmall{width:24px;height:24px;background-position:-158px -287px}
+.sprite.Study{width:16px;height:16px;background-position:-378px -647px}.sprite.StudySmall{width:24px;height:24px;background-position:-123px -287px}.sprite.Surprise{width:16px;height:16px;background-position:-351px -647px}
+.sprite.SurpriseSmall{width:24px;height:24px;background-position:-88px -287px}.sprite.Sweat{width:16px;height:16px;background-position:-324px -647px}.sprite.SweatSmall{width:24px;height:24px;background-position:-567px -252px}
+.sprite.Tag{width:16px;height:16px;background-position:-297px -647px}.sprite.Telephone{width:38px;height:51px;background-position:-397px -122px}.sprite.TickSmall{width:16px;height:16px;background-position:-270px -647px}
+.sprite.Tired{width:16px;height:16px;background-position:-243px -647px}.sprite.TiredSmall{width:24px;height:24px;background-position:-532px -252px}.sprite.Token{width:50px;height:50px;background-position:-557px -0px}
+.sprite.VisitorsTotal{width:32px;height:32px;background-position:-227px -209px}.sprite.VoIP{width:24px;height:24px;background-position:-497px -252px}.sprite.Wink{width:16px;height:16px;background-position:-216px -647px}
+.sprite.WinkSmall{width:24px;height:24px;background-position:-462px -252px}.sprite.Woo{width:16px;height:16px;background-position:-189px -647px}.sprite.WooSmall{width:24px;height:24px;background-position:-427px -252px}
+.sprite.ad{width:16px;height:16px;background-position:-162px -647px}.sprite.ae{width:16px;height:16px;background-position:-135px -647px}.sprite.af{width:16px;height:16px;background-position:-108px -647px}
+.sprite.ag{width:16px;height:16px;background-position:-81px -647px}.sprite.ai{width:16px;height:16px;background-position:-54px -647px}.sprite.al{width:16px;height:16px;background-position:-27px -647px}
+.sprite.am{width:16px;height:16px;background-position:-0px -647px}.sprite.an{width:16px;height:16px;background-position:-648px -620px}.sprite.ao{width:16px;height:16px;background-position:-648px -593px}
+.sprite.aq{width:16px;height:16px;background-position:-648px -566px}.sprite.ar{width:16px;height:16px;background-position:-648px -539px}.sprite.as{width:16px;height:16px;background-position:-648px -512px}
+.sprite.at{width:16px;height:16px;background-position:-648px -485px}.sprite.au{width:16px;height:16px;background-position:-648px -458px}.sprite.aw{width:16px;height:16px;background-position:-648px -431px}
+.sprite.ax{width:16px;height:16px;background-position:-647px -404px}.sprite.az{width:16px;height:16px;background-position:-640px -297px}.sprite.ba{width:16px;height:16px;background-position:-640px -270px}
+.sprite.bb{width:16px;height:16px;background-position:-629px -243px}.sprite.bd{width:16px;height:16px;background-position:-624px -216px}.sprite.be{width:16px;height:16px;background-position:-624px -189px}
+.sprite.bf{width:16px;height:16px;background-position:-642px -162px}.sprite.bg{width:16px;height:16px;background-position:-635px -135px}.sprite.bh{width:16px;height:16px;background-position:-645px -108px}
+.sprite.bi{width:16px;height:16px;background-position:-645px -81px}.sprite.bj{width:16px;height:16px;background-position:-645px -54px}.sprite.bm{width:16px;height:16px;background-position:-645px -27px}
+.sprite.bn{width:16px;height:16px;background-position:-645px -0px}.sprite.bo{width:16px;height:16px;background-position:-621px -620px}.sprite.br{width:16px;height:16px;background-position:-594px -620px}
+.sprite.bs{width:16px;height:16px;background-position:-567px -620px}.sprite.bt{width:16px;height:16px;background-position:-540px -620px}.sprite.bv{width:16px;height:16px;background-position:-513px -620px}
+.sprite.bw{width:16px;height:16px;background-position:-486px -620px}.sprite.by{width:16px;height:16px;background-position:-459px -620px}.sprite.bz{width:16px;height:16px;background-position:-432px -620px}
+.sprite.ca{width:16px;height:16px;background-position:-405px -620px}.sprite.cc{width:16px;height:16px;background-position:-378px -620px}.sprite.cd{width:16px;height:16px;background-position:-351px -620px}
+.sprite.cf{width:16px;height:16px;background-position:-324px -620px}.sprite.cg{width:16px;height:16px;background-position:-297px -620px}.sprite.ch{width:16px;height:16px;background-position:-270px -620px}
+.sprite.ci{width:16px;height:16px;background-position:-243px -620px}.sprite.ck{width:16px;height:16px;background-position:-216px -620px}.sprite.cl{width:16px;height:16px;background-position:-189px -620px}
+.sprite.close-balloon-white-hover{width:30px;height:25px;background-position:-268px -252px}.sprite.close-balloon-white{width:30px;height:25px;background-position:-227px -252px}
+.sprite.close-notification-hover{width:30px;height:24px;background-position:-350px -252px}.sprite.close-notification{width:30px;height:24px;background-position:-309px -252px}
+.sprite.cm{width:16px;height:16px;background-position:-162px -620px}.sprite.cn{width:16px;height:16px;background-position:-135px -620px}.sprite.co{width:16px;height:16px;background-position:-108px -620px}
+.sprite.cr{width:16px;height:16px;background-position:-81px -620px}.sprite.cs{width:16px;height:16px;background-position:-54px -620px}.sprite.cu{width:16px;height:16px;background-position:-27px -620px}
+.sprite.cv{width:16px;height:16px;background-position:-0px -620px}.sprite.cx{width:16px;height:16px;background-position:-621px -593px}.sprite.cy{width:16px;height:16px;background-position:-621px -566px}
+.sprite.cz{width:16px;height:16px;background-position:-621px -539px}.sprite.de{width:16px;height:16px;background-position:-621px -512px}.sprite.dj{width:16px;height:16px;background-position:-621px -485px}
+.sprite.dk{width:16px;height:16px;background-position:-621px -458px}.sprite.dm{width:16px;height:16px;background-position:-621px -431px}.sprite.do{width:16px;height:16px;background-position:-620px -404px}
+.sprite.dr{width:16px;height:16px;background-position:-623px -377px}.sprite.dz{width:16px;height:16px;background-position:-623px -350px}.sprite.ec{width:16px;height:16px;background-position:-623px -323px}
+.sprite.ee{width:16px;height:16px;background-position:-613px -296px}.sprite.eg{width:16px;height:16px;background-position:-54px -296px}.sprite.eh{width:16px;height:16px;background-position:-27px -296px}
+.sprite.er{width:16px;height:16px;background-position:-0px -296px}.sprite.es{width:16px;height:16px;background-position:-613px -269px}.sprite.et{width:16px;height:16px;background-position:-602px -242px}
+.sprite.eu{width:16px;height:16px;background-position:-615px -162px}.sprite.fi{width:16px;height:16px;background-position:-608px -135px}.sprite.fj{width:16px;height:16px;background-position:-618px -108px}
+.sprite.fk{width:16px;height:16px;background-position:-618px -81px}.sprite.fm{width:16px;height:16px;background-position:-618px -54px}.sprite.fo{width:16px;height:16px;background-position:-618px -27px}
+.sprite.fr{width:16px;height:16px;background-position:-618px -0px}.sprite.fx{width:16px;height:16px;background-position:-594px -571px}.sprite.ga{width:16px;height:16px;background-position:-567px -571px}
+.sprite.gb{width:16px;height:16px;background-position:-540px -571px}.sprite.gd{width:16px;height:16px;background-position:-513px -571px}.sprite.ge{width:16px;height:16px;background-position:-486px -571px}
+.sprite.gf{width:16px;height:16px;background-position:-459px -571px}.sprite.gg{width:16px;height:16px;background-position:-432px -571px}.sprite.gh{width:16px;height:16px;background-position:-405px -571px}
+.sprite.gi{width:16px;height:16px;background-position:-378px -571px}.sprite.gl{width:16px;height:16px;background-position:-351px -571px}.sprite.gm{width:16px;height:16px;background-position:-324px -571px}
+.sprite.gn{width:16px;height:16px;background-position:-297px -571px}.sprite.gp{width:16px;height:16px;background-position:-270px -571px}.sprite.gq{width:16px;height:16px;background-position:-243px -571px}
+.sprite.gr{width:16px;height:16px;background-position:-216px -571px}.sprite.gs{width:16px;height:16px;background-position:-189px -571px}.sprite.gt{width:16px;height:16px;background-position:-162px -571px}
+.sprite.gu{width:16px;height:16px;background-position:-135px -571px}.sprite.gw{width:16px;height:16px;background-position:-108px -571px}.sprite.gy{width:16px;height:16px;background-position:-81px -571px}
+.sprite.hk{width:16px;height:16px;background-position:-54px -571px}.sprite.hkg{width:16px;height:16px;background-position:-27px -571px}.sprite.hm{width:16px;height:16px;background-position:-0px -571px}
+.sprite.hn{width:16px;height:16px;background-position:-594px -544px}.sprite.hr{width:16px;height:16px;background-position:-567px -544px}.sprite.ht{width:16px;height:16px;background-position:-540px -544px}
+.sprite.hu{width:16px;height:16px;background-position:-513px -544px}.sprite.id{width:16px;height:16px;background-position:-486px -544px}.sprite.ie{width:16px;height:16px;background-position:-459px -544px}
+.sprite.il{width:16px;height:16px;background-position:-432px -544px}.sprite.in{width:16px;height:16px;background-position:-405px -544px}.sprite.io{width:16px;height:16px;background-position:-378px -544px}
+.sprite.iq{width:16px;height:16px;background-position:-351px -544px}.sprite.ir{width:16px;height:16px;background-position:-324px -544px}.sprite.is{width:16px;height:16px;background-position:-297px -544px}
+.sprite.it{width:16px;height:16px;background-position:-270px -544px}.sprite.je{width:16px;height:16px;background-position:-243px -544px}.sprite.jm{width:16px;height:16px;background-position:-216px -544px}
+.sprite.jo{width:16px;height:16px;background-position:-189px -544px}.sprite.jp{width:16px;height:16px;background-position:-162px -544px}.sprite.ke{width:16px;height:16px;background-position:-135px -544px}
+.sprite.kg{width:16px;height:16px;background-position:-108px -544px}.sprite.kh{width:16px;height:16px;background-position:-81px -544px}.sprite.ki{width:16px;height:16px;background-position:-54px -544px}
+.sprite.km{width:16px;height:16px;background-position:-27px -544px}.sprite.kn{width:16px;height:16px;background-position:-0px -544px}.sprite.kp{width:16px;height:16px;background-position:-594px -517px}
+.sprite.kr{width:16px;height:16px;background-position:-567px -517px}.sprite.kw{width:16px;height:16px;background-position:-540px -517px}.sprite.ky{width:16px;height:16px;background-position:-513px -517px}
+.sprite.kz{width:16px;height:16px;background-position:-486px -517px}.sprite.la{width:16px;height:16px;background-position:-459px -517px}.sprite.lb{width:16px;height:16px;background-position:-432px -517px}
+.sprite.lc{width:16px;height:16px;background-position:-405px -517px}.sprite.li{width:16px;height:16px;background-position:-378px -517px}.sprite.lk{width:16px;height:16px;background-position:-351px -517px}
+.sprite.logo{width:294px;height:83px;background-position:-181px -0px}.sprite.lr{width:16px;height:16px;background-position:-324px -517px}.sprite.ls{width:16px;height:16px;background-position:-297px -517px}
+.sprite.lt{width:16px;height:16px;background-position:-270px -517px}.sprite.lu{width:16px;height:16px;background-position:-243px -517px}.sprite.lv{width:16px;height:16px;background-position:-216px -517px}
+.sprite.ly{width:16px;height:16px;background-position:-189px -517px}.sprite.ma{width:16px;height:16px;background-position:-162px -517px}.sprite.mc{width:16px;height:16px;background-position:-135px -517px}
+.sprite.md{width:16px;height:16px;background-position:-108px -517px}.sprite.me{width:16px;height:16px;background-position:-81px -517px}.sprite.mg{width:16px;height:16px;background-position:-54px -517px}
+.sprite.mh{width:16px;height:16px;background-position:-27px -517px}.sprite.mk{width:16px;height:16px;background-position:-0px -517px}.sprite.ml{width:16px;height:16px;background-position:-594px -490px}
+.sprite.mm{width:16px;height:16px;background-position:-567px -490px}.sprite.mn{width:16px;height:16px;background-position:-540px -490px}.sprite.mo{width:16px;height:16px;background-position:-513px -490px}
+.sprite.mp{width:16px;height:16px;background-position:-486px -490px}.sprite.mq{width:16px;height:16px;background-position:-459px -490px}.sprite.mr{width:16px;height:16px;background-position:-432px -490px}
+.sprite.ms{width:16px;height:16px;background-position:-405px -490px}.sprite.mt{width:16px;height:16px;background-position:-378px -490px}.sprite.mu{width:16px;height:16px;background-position:-351px -490px}
+.sprite.mv{width:16px;height:16px;background-position:-324px -490px}.sprite.mw{width:16px;height:16px;background-position:-297px -490px}.sprite.mx{width:16px;height:16px;background-position:-270px -490px}
+.sprite.my{width:16px;height:16px;background-position:-243px -490px}.sprite.mz{width:16px;height:16px;background-position:-216px -490px}.sprite.na{width:16px;height:16px;background-position:-189px -490px}
+.sprite.nc{width:16px;height:16px;background-position:-162px -490px}.sprite.ne{width:16px;height:16px;background-position:-135px -490px}.sprite.nf{width:16px;height:16px;background-position:-108px -490px}
+.sprite.ng{width:16px;height:16px;background-position:-81px -490px}.sprite.ni{width:16px;height:16px;background-position:-54px -490px}.sprite.nl{width:16px;height:16px;background-position:-27px -490px}
+.sprite.no{width:16px;height:16px;background-position:-0px -490px}.sprite.np{width:16px;height:16px;background-position:-594px -463px}.sprite.nr{width:16px;height:16px;background-position:-567px -463px}
+.sprite.nu{width:16px;height:16px;background-position:-540px -463px}.sprite.nz{width:16px;height:16px;background-position:-513px -463px}.sprite.om{width:16px;height:16px;background-position:-486px -463px}
+.sprite.pa{width:16px;height:16px;background-position:-459px -463px}.sprite.pe{width:16px;height:16px;background-position:-432px -463px}.sprite.pf{width:16px;height:16px;background-position:-405px -463px}
+.sprite.pg{width:16px;height:16px;background-position:-378px -463px}.sprite.ph{width:16px;height:16px;background-position:-351px -463px}.sprite.pk{width:16px;height:16px;background-position:-324px -463px}
+.sprite.pl{width:16px;height:16px;background-position:-297px -463px}.sprite.pm{width:16px;height:16px;background-position:-270px -463px}.sprite.pn{width:16px;height:16px;background-position:-243px -463px}
+.sprite.pr{width:16px;height:16px;background-position:-216px -463px}.sprite.ps{width:16px;height:16px;background-position:-189px -463px}.sprite.pt{width:16px;height:16px;background-position:-162px -463px}
+.sprite.pw{width:16px;height:16px;background-position:-135px -463px}.sprite.py{width:16px;height:16px;background-position:-108px -463px}.sprite.qa{width:16px;height:16px;background-position:-81px -463px}
+.sprite.re{width:16px;height:16px;background-position:-54px -463px}.sprite.ro{width:16px;height:16px;background-position:-27px -463px}.sprite.rs{width:16px;height:16px;background-position:-0px -463px}
+.sprite.ru{width:16px;height:16px;background-position:-594px -436px}.sprite.rw{width:16px;height:16px;background-position:-567px -436px}.sprite.sa{width:16px;height:16px;background-position:-540px -436px}
+.sprite.sb{width:16px;height:16px;background-position:-513px -436px}.sprite.sc{width:16px;height:16px;background-position:-486px -436px}.sprite.sd{width:16px;height:16px;background-position:-459px -436px}
+.sprite.se{width:16px;height:16px;background-position:-432px -436px}.sprite.sg{width:16px;height:16px;background-position:-405px -436px}.sprite.sh{width:16px;height:16px;background-position:-378px -436px}
+.sprite.si{width:16px;height:16px;background-position:-351px -436px}.sprite.sj{width:16px;height:16px;background-position:-324px -436px}.sprite.sk{width:16px;height:16px;background-position:-297px -436px}
+.sprite.sl{width:16px;height:16px;background-position:-270px -436px}.sprite.sm{width:16px;height:16px;background-position:-243px -436px}.sprite.small-left-arrow{width:19px;height:19px;background-position:-593px -352px}
+.sprite.small-right-arrow{width:19px;height:19px;background-position:-593px -322px}.sprite.sn{width:16px;height:16px;background-position:-216px -436px}
+.sprite.so{width:16px;height:16px;background-position:-189px -436px}.sprite.sort-asc{width:10px;height:6px;background-position:-378px -189px}.sprite.sort-desc{width:10px;height:6px;background-position:-357px -189px}
+.sprite.sr{width:16px;height:16px;background-position:-162px -436px}.sprite.st{width:16px;height:16px;background-position:-135px -436px}.sprite.su{width:16px;height:16px;background-position:-108px -436px}
+.sprite.sv{width:16px;height:16px;background-position:-81px -436px}.sprite.sy{width:16px;height:16px;background-position:-54px -436px}.sprite.sz{width:16px;height:16px;background-position:-27px -436px}
+.sprite.tc{width:16px;height:16px;background-position:-0px -436px}.sprite.td{width:16px;height:16px;background-position:-585px -409px}.sprite.tf{width:16px;height:16px;background-position:-558px -409px}
+.sprite.tg{width:16px;height:16px;background-position:-531px -409px}.sprite.th{width:16px;height:16px;background-position:-504px -409px}.sprite.tj{width:16px;height:16px;background-position:-477px -409px}
+.sprite.tk{width:16px;height:16px;background-position:-450px -409px}.sprite.tl{width:16px;height:16px;background-position:-423px -409px}.sprite.tm{width:16px;height:16px;background-position:-396px -409px}
+.sprite.tn{width:16px;height:16px;background-position:-369px -409px}.sprite.to{width:16px;height:16px;background-position:-342px -409px}.sprite.tp{width:16px;height:16px;background-position:-315px -409px}
+.sprite.tr{width:16px;height:16px;background-position:-288px -409px}.sprite.trigger{width:22px;height:22px;background-position:-591px -209px}.sprite.tt{width:16px;height:16px;background-position:-261px -409px}
+.sprite.tv{width:16px;height:16px;background-position:-234px -409px}.sprite.tw{width:16px;height:16px;background-position:-207px -409px}.sprite.tz{width:16px;height:16px;background-position:-180px -409px}
+.sprite.ua{width:16px;height:16px;background-position:-153px -409px}.sprite.ug{width:16px;height:16px;background-position:-126px -409px}.sprite.uk{width:16px;height:16px;background-position:-99px -409px}
+.sprite.us{width:16px;height:16px;background-position:-593px -382px}.sprite.uy{width:16px;height:16px;background-position:-531px -382px}.sprite.uz{width:16px;height:16px;background-position:-504px -382px}
+.sprite.va{width:16px;height:16px;background-position:-477px -382px}.sprite.vc{width:16px;height:16px;background-position:-450px -382px}.sprite.ve{width:16px;height:16px;background-position:-423px -382px}
+.sprite.vg{width:16px;height:16px;background-position:-396px -382px}.sprite.vi{width:16px;height:16px;background-position:-369px -382px}.sprite.vn{width:16px;height:16px;background-position:-342px -382px}
+.sprite.vu{width:16px;height:16px;background-position:-315px -382px}.sprite.wf{width:16px;height:16px;background-position:-288px -382px}.sprite.ws{width:16px;height:16px;background-position:-261px -382px}
+.sprite.ye{width:16px;height:16px;background-position:-234px -382px}.sprite.yt{width:16px;height:16px;background-position:-207px -382px}.sprite.yu{width:16px;height:16px;background-position:-180px -382px}
+.sprite.za{width:16px;height:16px;background-position:-153px -382px}.sprite.zm{width:16px;height:16px;background-position:-126px -382px}.sprite.zr{width:16px;height:16px;background-position:-99px -382px}
+.sprite.zw{width:16px;height:16px;background-position:-153px -173px}

@@ -1,0 +1,203 @@
+
+DROP TABLE IF EXISTS `prefix_activity`;
+CREATE TABLE IF NOT EXISTS `prefix_activity` (
+  `id` bigint(20) NOT NULL auto_increment,
+  `user` bigint(20) NOT NULL,
+  `chat` bigint(20) NOT NULL default '0',
+  `username` varchar(30) NOT NULL,
+  `datetime` datetime NOT NULL,
+  `activity` text NOT NULL,
+  `duration` int(11) NOT NULL default '0',
+  `type` int(11) NOT NULL,
+  `status` int(1) NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM /*!40101 CHARACTER SET=utf8 */;
+
+DROP TABLE IF EXISTS `prefix_administration`;
+CREATE TABLE `prefix_administration` (
+  `id` bigint(20) NOT NULL auto_increment,
+  `user` bigint(20) NOT NULL default '0',
+  `username` varchar(30) NOT NULL,
+  `datetime` datetime NOT NULL default '0000-00-00 00:00:00',
+  `message` text NOT NULL,
+  `align` int(1) NOT NULL default '0',
+  `status` int(1) NOT NULL default '0',
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM /*!40101 CHARACTER SET=utf8 */;
+
+
+DROP TABLE IF EXISTS `prefix_callback`;
+CREATE TABLE `prefix_callback` (
+  `id` bigint(20) NOT NULL auto_increment,
+  `datetime` datetime NOT NULL default '0000-00-00 00:00:00',
+  `name` varchar(50) NOT NULL default '',
+  `email` varchar(100) NOT NULL default '',
+  `country` varchar(150) NOT NULL default '',
+  `timezone` varchar(5) NOT NULL default '',
+  `dial` varchar(5) NOT NULL default '',
+  `telephone` varchar(20) NOT NULL default '',
+  `message` text NOT NULL,
+  `operator` bigint(20) NOT NULL default '0',
+  `status` int(1) NOT NULL default '0',
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM /*!40101 CHARACTER SET=utf8 */;
+
+
+DROP TABLE IF EXISTS `prefix_chats`;
+CREATE TABLE `prefix_chats` (
+  `id` bigint(20) NOT NULL auto_increment,
+  `request` bigint(20) NOT NULL default '0',
+  `username` varchar(30) NOT NULL default '',
+  `datetime` datetime NOT NULL default '0000-00-00 00:00:00',
+  `refresh` datetime NOT NULL default '0000-00-00 00:00:00',
+  `email` varchar(50) NOT NULL default '',
+  `server` varchar(100) NOT NULL default '',
+  `department` text NOT NULL,
+  `rating` int(1) NOT NULL default '0',
+  `typing` int(1) NOT NULL default '0',
+  `transfer` int(1) NOT NULL default '0',
+  `active` int(1) NOT NULL default '0',
+  PRIMARY KEY  (`id`),
+  KEY `REQUEST`  (`request`),
+  KEY `DATETIME`  (`datetime`),
+  KEY `REFRESH`  (`refresh`),
+  KEY `ACTIVE`  (`active`)
+) ENGINE=MyISAM /*!40101 CHARACTER SET=utf8 */;
+
+
+DROP TABLE IF EXISTS `prefix_custom`;
+CREATE TABLE IF NOT EXISTS `prefix_custom` (
+  `id` bigint(20) NOT NULL auto_increment,
+  `request` bigint(20) NOT NULL default '0',
+  `custom` text NOT NULL,
+  `name` text NOT NULL,
+  `reference` text NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM /*!40101 CHARACTER SET=utf8 */;
+
+
+DROP TABLE IF EXISTS `prefix_messages`;
+CREATE TABLE `prefix_messages` (
+  `id` bigint(20) NOT NULL auto_increment,
+  `chat` bigint(20) NOT NULL default '0',
+  `username` varchar(30) NOT NULL,
+  `datetime` datetime NOT NULL default '0000-00-00 00:00:00',
+  `message` text NOT NULL,
+  `align` int(1) NOT NULL default '0',
+  `status` int(1) NOT NULL default '0',
+  PRIMARY KEY  (`id`),
+  KEY `CHAT`  (`chat`),
+  KEY `STATUS`  (`status`)
+) ENGINE=MyISAM /*!40101 CHARACTER SET=utf8 */;
+
+
+DROP TABLE IF EXISTS `prefix_orderproducts`;
+CREATE TABLE `prefix_orderproducts` (
+  `id` bigint(20) NOT NULL auto_increment,
+  `order` varchar(50) collate utf8_unicode_ci NOT NULL default '',
+  `product` varchar(50) collate utf8_unicode_ci NOT NULL default '',
+  `category` varchar(100) collate utf8_unicode_ci NOT NULL default '',
+  `price` double NOT NULL default '0',
+  `quantity` int(11) NOT NULL default '0',
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM /*!40101 CHARACTER SET=utf8 */;
+
+
+DROP TABLE IF EXISTS `prefix_orders`;
+CREATE TABLE `prefix_orders` (
+  `id` bigint(20) NOT NULL auto_increment,
+  `order` varchar(50) collate utf8_unicode_ci NOT NULL default '',
+  `request` bigint(20) NOT NULL default '0',
+  `datetime` datetime NOT NULL default '0000-00-00 00:00:00',
+  `affiliation` varchar(100) collate utf8_unicode_ci NOT NULL default '',
+  `total` double NOT NULL default '0',
+  `tax` double NOT NULL default '0',
+  `shipping` double NOT NULL default '0',
+  `city` varchar(100) collate utf8_unicode_ci NOT NULL default '',
+  `state` varchar(100) collate utf8_unicode_ci NOT NULL default '',
+  `country` varchar(150) collate utf8_unicode_ci NOT NULL default '',
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `order` (`order`)
+) ENGINE=MyISAM /*!40101 CHARACTER SET=utf8 */;
+
+
+DROP TABLE IF EXISTS `prefix_products`;
+CREATE TABLE `prefix_products` (
+  `id` bigint(20) NOT NULL auto_increment,
+  `code` varchar(50) collate utf8_unicode_ci NOT NULL default '',
+  `name` varchar(150) collate utf8_unicode_ci NOT NULL default '',
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `code` (`code`)
+) ENGINE=MyISAM /*!40101 CHARACTER SET=utf8 */;
+
+
+DROP TABLE IF EXISTS `prefix_requests`;
+CREATE TABLE `prefix_requests` (
+  `id` bigint(20) NOT NULL auto_increment,
+  `ipaddress` varchar(100) NOT NULL default '',
+  `useragent` varchar(200) NOT NULL default '',
+  `resolution` varchar(20) NOT NULL default '',
+  `city` text NOT NULL,
+  `state` text NOT NULL,
+  `country` text NOT NULL,
+  `datetime` datetime NOT NULL default '0000-00-00 00:00:00',
+  `request` datetime NOT NULL default '0000-00-00 00:00:00',
+  `refresh` datetime NOT NULL default '0000-00-00 00:00:00',
+  `url` text NOT NULL,
+  `title` varchar(150) NOT NULL default '',
+  `referrer` text NOT NULL,
+  `path` text NOT NULL,
+  `initiate` bigint(20) NOT NULL default '0',
+  `status` int(1) NOT NULL default '0',
+  PRIMARY KEY  (`id`),
+  KEY `DATETIME` (`datetime`),
+  KEY `REQUEST` (`request`),
+  KEY `REFRESH` (`refresh`),
+  KEY `STATUS` (`status`)
+) ENGINE=InnoDB /*!40101 CHARACTER SET=utf8 */;
+
+
+DROP TABLE IF EXISTS `prefix_responses`;
+CREATE TABLE `prefix_responses` (
+  `id` int(5) NOT NULL auto_increment,
+  `name` text NOT NULL,
+  `datetime` datetime NOT NULL default '0000-00-00 00:00:00',
+  `type` tinyint(1) NOT NULL,
+  `category` text NOT NULL,
+  `content` longtext NOT NULL,
+  `tags` text NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM /*!40101 CHARACTER SET=utf8 */;
+
+
+DROP TABLE IF EXISTS `prefix_settings`;
+CREATE TABLE `prefix_settings` (
+  `name` varchar(50) NOT NULL default '',
+  `value` varchar(255) NOT NULL default '',
+  PRIMARY KEY  (`name`)
+) ENGINE=MyISAM /*!40101 CHARACTER SET=utf8 */;
+
+
+DROP TABLE IF EXISTS `prefix_users`;
+CREATE TABLE `prefix_users` (
+  `id` bigint(20) NOT NULL auto_increment,
+  `username` varchar(30) NOT NULL default '',
+  `password` text NOT NULL,
+  `firstname` varchar(50) NOT NULL default '',
+  `lastname` varchar(50) NOT NULL default '',
+  `email` varchar(50) NOT NULL default '',
+  `department` text NOT NULL,
+  `device` text NOT NULL,
+  `image` LONGTEXT NOT NULL,
+  `datetime` datetime NOT NULL default '0000-00-00 00:00:00',
+  `refresh` datetime NOT NULL default '0000-00-00 00:00:00',
+  `updated` datetime NOT NULL default '0000-00-00 00:00:00',
+  `disabled` int(1) NOT NULL default '0',
+  `privilege` int(1) NOT NULL default '0',
+  `status` bigint(20) NOT NULL default '0',
+  `custom` bigint(20) NOT NULL default '0',
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `USERNAME`  (`username`),
+  KEY `REFRESH`  (`refresh`),
+  KEY `STATUS`  (`status`)
+) ENGINE=MyISAM /*!40101 CHARACTER SET=utf8 */;

@@ -1,0 +1,132 @@
+a.normlink:link, a.normlink:visited, a.normlink:active {
+	color: #339;
+	text-decoration: none;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	border-bottom-width: 0.05em;
+	border-bottom-style: solid;
+	border-bottom-color: #CCCCCC;
+}
+a.normlink:hover {
+	color: #339;
+	text-decoration: none;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	border-bottom-width: 0.05em;
+	border-bottom-style: solid;
+	border-bottom-color: #339;
+}
+a.menulink:link, a.menulink:visited, a.menulink:active {
+	color: #000000;
+	text-decoration: none;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size:11px;
+}
+a.menulink:hover {
+	color: #339;
+	text-decoration: none;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size:11px;
+	border-bottom-width: 0.05em;
+	border-bottom-style: solid;
+	border-bottom-color: #339;
+}
+a.helplink:link, a.helplink:visited, a.helplink:active {
+	color: #339;
+	text-decoration: none;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	border-bottom-width: 0.05em;
+	border-bottom-style: dashed;
+	border-bottom-color: #CCCCCC;
+}
+a.hiddenlink:link, a.hiddenlink:visited, a.hiddenlink:active {
+	text-decoration: none;
+}
+.tableheaderspacer {
+	background-color: #999999;
+}
+a.mainlink:link, a.mainlink:visited, a.mainlink:active, .mainheading {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	font-style: italic;
+	font-weight: lighter;
+	text-decoration: none;
+	color: #F3F3F3;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+body {
+	background-color: #F3F3F3;
+	background-image: url(./images/Background.gif);
+	background-repeat: repeat-x;
+	margin-top: 0px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+div, p, td {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+h1 {
+	font-size: 1.5em;
+	font-family: Helvetica, Arial, Sans-Serif;
+	letter-spacing: -.05em;
+	line-height: 115%;
+	margin-above: 2px;
+	padding-above: 2px;
+	margin-bottom: 2px;
+	padding-bottom: 2px;
+}
+h2 {
+	font-size: 1.5em;
+	font-family: Helvetica, Arial, Sans-Serif;
+	letter-spacing: -.05em;
+	line-height: 115%;
+}
+.heading {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	font-style: italic;
+	font-weight:normal;
+}
+.small {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+}
+.box {
+	border-style: solid;
+	border-width: 1px;
+	border-color: #FFFF77;
+	background-color: #FFFFCC;
+	margin-top: 10px;
+}
+.button {
+	display: inline-block;
+	padding: 0 25px;
+	margin: 0 auto;
+	border-radius: 18px;
+	height: 40px;
+	border: solid #ccc 1px;
+	background: #fefefe;
+	background:-webkit-linear-gradient(top, #fefefe, #e5e5e5);
+	background: -webkit-linear-gradient(top, #fefefe, #e5e5e5);
+	background: -moz-linear-gradient(top, #fefefe, #e5e5e5);
+	background: -o-linear-gradient(top, #fefefe, #e5e5e5);
+	background: -ms-linear-gradient(top, #fefefe, #e5e5e5);
+	background:linear-gradient(top, #fefefe, #e5e5e5);
+	-box-shadow:inset 0 0 5px rgba(255,255,255,1.0);
+	-webkit-box-shadow:inset 0 0 5px rgba(255,255,255,1.0);
+	-moz-box-shadow:inset 0 0 5px rgba(255,255,255,1.0);
+	font-family:'Segoe UI Light', 'Segoe WP Light', 'Helvetica Neue', 'RobotoLight', sans-serif !important;
+	text-shadow:0 0 1px #ccc;
+	font-size:20px;
+	line-height:37px;
+	color:#666;
+	cursor:pointer;
+}
+.button:hover {
+	background: #fefdfd;
+	background: -webkit-linear-gradient(top, #fefefe, #d8d9d9);
+	background: -moz-linear-gradient(top, #fefefe, #d8d9d9);
+	background: -o-linear-gradient(top, #fefefe, #d8d9d9);
+	background: -ms-linear-gradient(top, #fefefe, #d8d9d9);
+	background:linear-gradient(top, #fefefe, #d8d9d9);
+}

@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>stardevelop.com - Live Chat Customer Service Software, Live Help, Customer Support</title>
+<meta name="robots" content="noindex, follow"/> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet" type="text/css"/>
+<script type="text/JavaScript" src="../scripts/jquery-latest.js"></script>
+<script type="text/javascript" src="../scripts/jquery.json.js"></script>
+<script type="text/javascript" src="../scripts/jquery.cookies.js"></script>
+<script type="text/javascript" src="../scripts/jquery.pulse.js"></script>
+<script type="text/javascript" src="../scripts/shCore.js"></script>
+<script type="text/javascript" src="../scripts/shBrushXml.js"></script>
+<script type="text/javascript" src="../scripts/shBrushJScript.js"></script>
+<link type="text/css" rel="stylesheet" href="styles/styles.css"/>
+<link type="text/css" rel="stylesheet" href="../styles/styles.css"/>
+<link type="text/css" rel="stylesheet" href="../styles/shCoreDefault.css"/>
+<link type="text/css" rel="stylesheet" href="../styles/shThemeLight.css"/>
+<script type="text/javascript">
+<!--
+
+	// Live Help HTML Code
+	var LiveHelpSettings = {};
+	LiveHelpSettings.server = document.location.host + document.location.pathname.substring(0, document.location.pathname.indexOf('/livehelp'));
+	LiveHelpSettings.embedded = false;
+	LiveHelpSettings.inviteTab = false;
+
+	(function(d, $, undefined) { 
+		// JavaScript
+		var LiveHelp = d.createElement('script'); LiveHelp.type = 'text/javascript'; LiveHelp.async = true;
+		LiveHelp.src = ('https:' == d.location.protocol ? 'https://' : 'http://') + LiveHelpSettings.server + '/livehelp/scripts/jquery.livehelp.js';
+		var s = d.getElementsByTagName('script')[0];
+		s.parentNode.insertBefore(LiveHelp, s);
+	})(document, jQuery);
+	
+	// Cookie
+	var cookie = { agree: false, plugin: '' },
+		json = $.cookie('LiveHelpInstall');
+	
+	if (json !== undefined) {
+		cookie = $.evalJSON(json);
+	}
+	
+	// Preload Images
+	jQuery.preloadImages = function() {
+		for (var i = 0; i < arguments.length; i++) {
+			jQuery('<img>').attr('src', arguments[i]);
+		}
+	}
+	
+	// Validation Functions
+	function validateField(obj, id) {
+		var value = (obj instanceof $) ? obj.val() : $(obj).val();
+		if ($.trim(value) == '') {
+			$(id).removeClass('TickSmall').addClass('CrossSmall').fadeIn(250);
+			return false;
+		} else {
+			$(id).removeClass('CrossSmall').addClass('TickSmall').fadeIn(250);
+			return true;
+		}
+	}
+
+	function validateEmail(obj, id) {
+		var value = (obj instanceof $) ? obj.val() : $(obj).val();
+		if (/^[\-!#$%&'*+\\.\/0-9=?A-Z^_`a-z{|}~]+@[\-!#$%&'*+\\\/0-9=?A-Z^_`a-z{|}~]+\.[\-!#$%&'*+\\.\/0-9=?A-Z^_`a-z{|}~]+$/i.test(value)) {
+			$(id).removeClass('CrossSmall').addClass('TickSmall').fadeIn(250);
+			return true;
+		} else {
+			$(id).removeClass('TickSmall').addClass('CrossSmall').fadeIn(250);
+			return false;
+		}
+	}
+
+	function validateDatabase() {
+		var	verifyDatabase = true;
+		
+		$(':input[id^=Database]').each(function (index, value) {
+			var obj = $(value),
+				id = '#' + obj.attr('id') + 'Error';
+			
+			verifyDatabase = validateField(this, id);
+			return verifyDatabase;
+		});
+		
+		if (verifyDatabase) {
+		
+			var data = 'HOSTNAME=' + encodeURIComponent($(':input[id=DatabaseHostname]').val()) + '&USERNAME=' + encodeURIComponent($(':input[id=DatabaseUsername]').val()) + '&PASSWORD=' + encodeURIComponent($(':input[id=DatabasePassword]').val()) + '&DATABASE=' + encodeURIComponent($(':input[id=DatabaseName]').val());
+
+			// AJAX Verify Database
+			$.ajax({
+				url: 'verify.php',
+				type: 'POST',
+				data: data,
+				dataType: 'json',
+				success: function (data, textStatus, jqXHR) {
+					if (!data.result && data.error !== undefined) {
+						if (data.error.type == 1045) {
+							$('#DatabaseUsernameError, #DatabasePasswordError').removeClass('TickSmall').addClass('CrossSmall').fadeIn(250);
+						} else if (data.error.type == 1044) {
+							$('#DatabaseNameError').removeClass('TickSmall').addClass('CrossSmall').fadeIn(250);
+							$('#DatabaseUsernameError, #DatabasePasswordError').removeClass('CrossSmall').addClass('TickSmall').fadeIn(250);
+						}
+						return false;
+					} else {
+						$('#DatabaseHostnameError, #DatabaseNameError, #DatabaseUsernameError, #DatabasePasswordError').removeClass('CrossSmall').addClass('TickSmall').fadeIn(250);
+						return true;
+					}
+				}
+			});
+		} else {
+			return false;
+		}
+	}
+	
+	function validatePassword(selector) {
+		var id = $(selector).attr('id'),
+			error = '#' + id + 'Error';
+			
+		if (validateField(selector, error)) {
+			if ($(':input[id=Password]').val() == $(selector).val()) {
+				$(error).removeClass('CrossSmall').addClass('TickSmall').fadeIn(250);
+				return true;
+			} else {
+				$(error).removeClass('TickSmall').addClass('CrossSmall').fadeIn(250);
+				return false;
+			}
+		}
+	}
+	
+	function validateInstall() {
+		// Validate Database
+		var result = validateDatabase();
+		
+		// Validate Settings
+		$(':input[id*=Email]').each(function (index, value) {
+			var id = $(this).attr('id');
+			result = validateEmail($(this), '#' + id + 'Error');
+		});
+		
+		$(':input[id=Username],:input[id=Firstname],:input[id=Lastname],:input[id=Password]').each(function (index, value) {
+			var error = '#' + $(value).attr('id') + 'Error',
+				account = validateField(this, error)
+			result = (result) ? account : false;
+		});
+		
+		var password = validatePassword(':input[id=RetypePassword]');
+		result = (result) ? password : false;
+		return result;
+	}
+	
+	function checkRequirements() {
+	
+		// AJAX Check Requirements
+		$.ajax({
+			url: 'requirements.php',
+			dataType: 'json',
+			success: function (data, textStatus, jqXHR) {
+				// Cookie
+				var json = $.cookie('LiveHelpInstall')
+				if (json !== undefined) {
+					cookie = $.evalJSON(json);
+					if (cookie.agree) {
+						$('#InstallAgreement').hide();
+						$('#InstallDatabase').fadeIn();
+					}
+				}
+		
+				if (!data.result && data.error !== undefined) {		
+					// Validate Install
+					$('.Error').text(data.error);
+					$('.Error').css({ 'display': 'inline-block', 'opacity': 0 }).pulse({ 'opacity': [0.75, 1]}, 500, 5);
+					return false;
+				}
+				// Plugin / Integration
+				if (data.plugin != undefined && data.plugin == 'WHMCS') {
+					cookie.plugin = data.plugin;
+					$.cookie('LiveHelpInstall', $.toJSON(cookie), true, '/', '.' + document.location.host);
+					$('#LiveHelpInstall').hide();
+					$('#InstallHeading').text('Live Chat ' + cookie.plugin + ' Installation');
+					$('#LiveHelpIntegrated').fadeIn();
+				}
+			}
+		});
+	}
+	
+	// Document Ready
+	$(window).ready(function () {
+		
+		// Requirements
+		checkRequirements();
+	
+		// Preload Images
+		$.preloadImages('../images/HTML5Logo64.png');
+		
+		// HTML5 Logo
+		$('#HTML5Logo').hover(function () {
+			$(this).css('background-image', 'url(../images/HTML5Logo64.png)');
+		}, function () {
+			$(this).css('background-image', 'url(../images/HTML5Logo64Gray.png)');
+		});
+		
+		// License Agreement
+		$('#AcceptButton, #InstallButton').hover(function () {
+			$(this).toggleClass('OfflineButton OfflineButtonHover');
+		}, function() {
+			$(this).toggleClass('OfflineButton OfflineButtonHover');
+		});
+		$('#AcceptButton').click(function () {
+			if (!cookie) {
+				cookie = { agree: false };
+			}
+			cookie.agree = true;
+			$.cookie('LiveHelpInstall', $.toJSON(cookie), true, '/', '.' + document.location.host);
+			$('#InstallAgreement').hide();
+			$('#InstallDatabase').fadeIn();
+		});
+		
+		// Hover Input
+		$(':input, :password, textarea').focus(function () {
+			$(this).add($(this).parent()).css('background-color', '#f2fbfe').css('border-color', '#d0e8f8');
+		}).blur(function () {
+			$(this).add($(this).parent()).css('background-color', '#fbfbfb').css('border-color', '#e5e5e5');
+		});
+		
+		// Validation
+		$(':input[id=OfflineEmail], :input[id=Email]').bind('keydown blur', function() {
+			var id = $(this).attr('id');
+			validateEmail(this, '#' + id + 'Error');
+		});
+		$(':input[id=RetypePassword]').bind('keydown blur keyup', function() {
+			validatePassword(this)
+		});
+		$(':input[id^=Database]').bind('keydown blur', function() {
+			validateDatabase();
+		});
+		$(':input[id=Username],:input[id=Firstname],:input[id=Lastname],:input[id=Password]').bind('keydown blur', function() {
+			var error = '#' + $(this).attr('id') + 'Error';
+			validateField(this, error);
+		});
+		
+		// Installation
+		$('#InstallButton').click(function () {
+			if (validateInstall() || cookie.plugin.length > 0) {
+			
+				// AJAX Install Database
+				var data = 'DATABASEHOSTNAME=' + encodeURIComponent($(':input[id=DatabaseHostname]').val()) + '&DATABASEUSERNAME=' + encodeURIComponent($(':input[id=DatabaseUsername]').val()) + '&DATABASEPASSWORD=' + encodeURIComponent($(':input[id=DatabasePassword]').val()) + '&DATABASEPREFIX=' + encodeURIComponent($(':input[id=DatabasePrefix]').val()) + '&DATABASENAME=' + encodeURIComponent($(':input[id=DatabaseName]').val()) + '&OFFLINEEMAIL=' + encodeURIComponent($(':input[id=OfflineEmail]').val()) + '&USERNAME=' + encodeURIComponent($(':input[id=Username]').val()) + '&FIRSTNAME=' + encodeURIComponent($(':input[id=Firstname]').val()) + '&LASTNAME=' + encodeURIComponent($(':input[id=Lastname]').val()) + '&EMAIL=' + encodeURIComponent($(':input[id=Email]').val()) + '&PASSWORD=' + encodeURIComponent($(':input[id=Password]').val()) + '&PASSWORDCONFIRM=' + encodeURIComponent($(':input[id=RetypePassword]').val());
+				$.ajax({
+					url: 'install.php',
+					type: 'POST',
+					data: data,
+					dataType: 'json',
+					success: function (data, textStatus, jqXHR) {
+						if (!data.result && data.error !== undefined) {
+							// Validate Install
+							$('.Error').text(data.error);
+							$('.Error').css({ 'display': 'inline-block', 'opacity': 0 }).pulse({ 'opacity': [0.75, 1]}, 500, 5);
+							return false;
+						} else {
+							$('#InstallDatabase').hide();
+							$('#InstallCompleted').fadeIn();
+						}
+					}
+				});
+				
+			}
+		});
+		
+		// HTML Code
+		var html = $('#LiveHelpHTMLStep1').html();
+		html = html.replace('www.example.com', document.location.host);
+		$('#LiveHelpHTMLStep1').html(html);
+		html = $('#LiveHelpHTMLStep2').html();
+		html = html.replace('http://www.example.com', ('https:' == document.location.protocol ? 'https://' : 'http://') + document.location.host);
+		$('#LiveHelpHTMLStep2').html(html);
+		
+		// Syntax Highlighter
+		SyntaxHighlighter.all();
+		
+	});
+	
+-->
+</script>
+<style type="text/css">
+body {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	background: url(../images/ChatBackgroundTop.png) #F9F9F9 repeat-x;
+}
+
+h1 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	font-style: italic;
+}
+
+.Error {
+	color: #555;
+	background: #fedbdb;
+	border-radius: 10px; -moz-border-radius: 10px; -webkit-border-radius: 10px;
+	border: 1px solid #feb4b4;
+	height: 30px;
+	margin: 30px auto 0;
+	padding: 10px 10px 0 10px;
+	box-shadow:
+		0 1px 0 rgba(255, 255, 255, 0.5) inset,
+		0 1px 0 #fff
+	;
+}
+
+a:link, a:visited, a:active {
+	color: #333399;
+	text-decoration: none;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	border-bottom-width: 0.05em;
+	border-bottom-style: solid;
+	border-bottom-color: #cccccc;
+}
+
+a:hover {
+	color: #333399;
+	text-decoration: none;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	border-bottom-width: 0.05em;
+	border-bottom-style: solid;
+	border-bottom-color: #333399;
+}
+
+#InstallDatabase .LiveHelpInput {
+	position:relative;
+	color:#555;
+	border:1px solid #E5E5E5;
+	background:#FBFBFB;
+	padding:3px;
+	height:20px;
+	width:300px;
+	margin:2px 0;
+	-moz-box-shadow:inset 1px 1px 2px rgba(200,200,200,0.2); -webkit-box-shadow:inset 1px 1px 2px rgba(200,200,200,0.2); box-shadow:inset 1px 1px 2px rgba(200,200,200,0.2);
+}
+
+#InstallDatabase .LiveHelpLogin input, #InstallDatabase .LiveHelpLogin textarea {
+	color:#555;
+	outline:none;
+	resize:none;
+	padding:0;
+	margin:0;
+	font-size:16px;
+	width:275px;
+	border:none;
+	background:#FBFBFB;
+}
+</style>
+</head>
+<body style="margin:20px auto; text-align:center">
+	<img src="../images/LogoLarge.png" alt="Live Help Messenger" title="Live Help Messenger" style="position:relative; z-index:100"/>
+	<div style="width:960px; margin: 0 auto; position:relative; top:-25px; z-index:10">
+		<div id="HTML5Logo" style="background:url(../images/HTML5Logo64Gray.png) no-repeat; width:64px; height:64px; position:fixed; bottom:15px" title="HTML5"></div>
+		<div style="width:800px; background-color:#fefefe; border-radius:15px; margin:0 auto;">
+			<div style="width:700px; margin: 0 auto">
+				<div id="InstallAgreement" style="height:100%">
+					<div style="font-family:'Open Sans', sans-serif; padding-top:30px; text-shadow:0 0 2px #ccc; letter-spacing:-1px; font-size:32px; font-weight:700; line-height:35px; color:#999">Live Chat Installation</div>
+					<div style="position:relative; background:#fbfbfb; border:1px solid #e5e5e5; height:500px; padding:3px; margin:10px">
+						<textarea id="LicenseAgreement" cols="30" rows="6" readonly="readonly" style="background:#fbfbfb; color:#555; border:none; outline:none; margin:0; padding:0; font-size:16px; width:100%; height:500px; vertical-align:middle; font-family:Arial, Arial Unicode, Lucida, Verdana; resize:none">
+Software License Agreement and Limited Warranty 
+
+Notice to user:
+
+Please read this License Carefully. This is a legal agreement between stardevelop.com (STARDEVELOP PTY. LTD. ACN: 109 493 674) or an authorized dealer/reseller/licensor of stardevelop.com ("Vendor"), and the end user ("Licensee"). stardevelop.com or the authorized dealer/reseller/licensor licenses the enclosed software and documentation to the original individual customer for use only on the terms described in this License Agreement (this "License"). Opening the enclosed CD/Disk envelope and / or using the Software indicates that the end user accepts and agrees to comply with these terms.  
+ 
+
+GRANT OF LICENSES 
+(a) Vendor hereby grants to Licensee a non-exclusive, nontransferable, license (without the ability to sublicense) to use this product and make one copy of the Software in machine-readable form for backup purposes. 
+
+(b) Vendor retains title to the Software in all forms whatsoever. 
+
+(c) Vendor reserves all rights not expressly granted herein. 
+
+
+2. LICENSE FEES
+
+This license shall have no force or effect unless and until Licensee shall have submitted to Vendor all applicable license fees in full. All such fees are exclusive of any taxes, duties, licenses, fees, excises or tariffs now or hereafter imposed on Licensee's production, licensing, sale, transportation, import, export or use of the Software or Licensee Programs, all of which shall be the responsibility of Licensee. 
+
+
+3. LIMITED WARRANTY
+
+(a) Vendor warrants that for one (1) year following delivery of the Software to Licensee, the Software, unless modified in any way by Licensee, will perform substantially the functions described in any associated product documentation provided by Vendor. Vendor does not warrant that the Software will meet Licensee's specific requirements or that operation of the Software will be uninterrupted or error-free. Vendor is not responsible for any problem, including any problem that would otherwise be a breach of warranty, caused by: 
+
+Changes in the operating characteristics of computer hardware or computer operating systems. 
+Interaction of the Software with software not supplied or approved by Vendor. 
+Accident, abuse, or misapplication. 
+
+(b) Vendor's entire liability and Licensee's sole remedy under the foregoing warranty during the warranty period is that Vendor shall, at its sole and exclusive option, either use reasonable efforts to correct any reported deviation from the relevant product documentation, replace the Software with a functionally equivalent program, or refund all license fees paid, in which case, this License shall immediately terminate. Any repaired or replaced Software will be re-warranted for an additional ninety (90) day period, unless subsequently modified by Licensee. 
+
+(c) The Above warranties are exclusive and Vendor makes no other warranties, Whether expressed or implied, including the implied warranties of merchantability, fitness for a Particular purpose, or non-infringement. 
+
+
+4. LIMITATION OF LIABILITY
+
+Under no circumstances shall Vendor be liable for any incidental, special or consequential Damages, even if Vendor has been advised of the possibility of such damages. 
+
+In no event shall Vendor's total liability to Licensee for all damages, losses, and causes of action (whether in contract, tort (including negligence) or otherwise) exceed the amount paid by Licensee for the Software.
+
+
+5. BREACH AND TERMINATION
+
+(a) This License is effective until terminated. This License may be terminated by the non-defaulting party if either party materially fails to perform or comply with this License or any provision hereof. 
+
+(b) Termination due to a breach of Section 6 shall be effective upon notice. In all other cases termination shall be effective thirty (30) days after notice of termination to the defaulting party if the defaults have not been cured within such thirty (30) day period. The rights and remedies of the parties provided herein shall not be exclusive and are in addition to any other rights and remedies provided by law or this Agreement. 
+
+(c) Upon termination of this Agreement, all rights and licenses granted hereunder shall immediately terminate and all Software and other Proprietary Information of Vendor in the possession of Licensee or under its control, shall be immediately returned to Vendor. End user licenses properly granted pursuant to this Agreement and prior to termination of this Agreement shall not be diminished or abridged by the termination of this Agreement. 
+
+
+6. GOVERNING LAW
+
+This Agreement is governed by Australian law and you submit to the jurisdiction of an Australian court in relation to any matter or dispute arising hereunder. 
+ 
+
+7. NOTICE TO UNITED STATES GOVERNMENT END USERS
+
+The Software and Documentation:  
+
+Was developed with no government funds. 
+
+Is a trade secret of stardevelop.com for all purposes of the Freedom of Information Act. 
+
+Are "Commercial Items," as that term is defined at 48 C.F.R. &sect;2.101, consisting of "Commercial Computer Software" and "Commercial Computer Software Documentation" as such terms are used in 48 C.F.R. &sect;12.212 or 48 C.F.R. &sect;227.7202, as applicable. Consistent with 48 C.F.R. &sect;12.212 or 48 C.F.R. &sect;227.7202-1 through &sect;227.7202-4, as applicable, The "Commercial Computer Software" and "Commercial Computer Software Documentation" are being licensed to U.S. Government end users (i) only as "Commercial Items" and (ii) with only those rights granted to all other end users pursuant to the terms and conditions herein. 
+
+For units of the Department of Defense (DOD), this Software is sold only with "Restricted Rights" as that term is defined in the DOD Supplement to the Federal Acquisition Regulations ("DFARS") 52.227-7013 (c)(1)(ii) and use, duplication or disclosure is subject to restrictions as set forth in subparagraph (c)(1)(ii) of the Rights in Technical Data and Computer Software clause of DF ARS 52.227-7013. Manufacturer: stardevelop.com. 
+
+Unpublished-rights reserved under the copyright laws of Australia. stardevelop.com, PO BOX 412, Helensvale, Queensland 4212, Australia Telephone: +61 402 876 739.
+						</textarea>
+					</div>
+					<div id="AcceptButton" class="button" style="margin:25px auto">Accept</div>
+				</div>
+				<div id="InstallDatabase" style="display:none; height:100%">
+					<div id="InstallHeading" style="font-family:'Open Sans', sans-serif; padding-top:30px; text-shadow:0 0 2px #ccc; letter-spacing:-1px; font-size:32px; font-weight:700; line-height:35px; color:#999">Live Chat Installation</div>
+					<div style="margin:15px">Before proceeding please view the documentation within our <a href="http://livehelp.stardevelop.com/kb/" target="_blank">Live Help Knowledge Base</a>.  If you experience any problems please contact technical support via. email or Live Chat.</div>
+					<div class="Error" style="display:none">
+						<span>Please update your MySQL server to the latest MySQL.  Live Help requires MySQL 4.0.18</span>
+					</div>
+					<div id="LiveHelpInstall" class="LiveHelpLogin" style="background: #fefefe; width:315px; margin:20px auto; left: 0">
+						<div style="margin: 10px; text-align:center; font-family:'Open Sans', sans-serif; text-shadow:0 0 2px #ccc; letter-spacing:-1px; font-size:25px; font-weight:700; line-height:25px; color:#999">MySQL Database</div>
+						<div style="margin-bottom:20px">
+							<label class="HostnameLabel">Database Hostname<br/>
+								<div class="LiveHelpInput">
+									<input id="DatabaseHostname" type="text" value="localhost"/>
+									<div id="DatabaseHostnameError" title="Database Hostname Required" class="sprite InputError"></div>
+								</div>
+							</label>
+							<label class="DatabaseNameLabel">Database Name<br/>
+								<div class="LiveHelpInput">
+									<input id="DatabaseName" type="text"/>
+									<div id="DatabaseNameError" title="Database Name Required" class="sprite InputError"></div>
+								</div>
+							</label>
+							<label class="DatabaseUsernameLabel">Database Username<br/>
+								<div class="LiveHelpInput">
+									<input id="DatabaseUsername" type="text"/>
+									<div id="DatabaseUsernameError" title="Database Username Required" class="sprite InputError"></div>
+								</div>
+							</label>
+							<label class="DatabasePasswordLabel">Database Password<br/>
+								<div class="LiveHelpInput">
+									<input id="DatabasePassword" type="password"/>
+									<div id="DatabasePasswordError" title="Database Password Required" class="sprite InputError"></div>
+								</div>
+							</label>
+							<label class="DatabasePrefixLabel">Database Table Prefix<br/>
+								<div class="LiveHelpInput">
+									<input id="DatabasePrefix" type="text" value="livehelp_"/>
+									<div id="DatabasePrefixError" title="Database Table Prefix Required" class="sprite InputError"></div>
+								</div>
+							</label>
+						</div>
+						<div style="margin-bottom:20px">
+							<label class="OfflineEmailLabel">Offline Email Address<br/>
+								<div class="LiveHelpInput">
+									<input id="OfflineEmail" type="email"/>
+									<div id="OfflineEmailError" title="Offline Email Address Required" class="sprite InputError"></div>
+								</div>
+							</label>
+						</div>
+						<div>
+							<div style="margin: 10px; text-align:center; font-family:'Open Sans', sans-serif; text-shadow:0 0 2px #ccc; letter-spacing:-1px; font-size:25px; font-weight:700; line-height:25px; color:#999">Operator Account</div>
+							<label class="UsernameLabel">Username<br/>
+								<div class="LiveHelpInput">
+									<input id="Username" type="text"/>
+									<div id="UsernameError" title="Username Required" class="sprite InputError"></div>
+								</div>
+							</label>
+							<label class="FirstnameLabel">First Name<br/>
+								<div class="LiveHelpInput">
+									<input id="Firstname" type="text"/>
+									<div id="FirstnameError" title="First Name Required" class="sprite InputError"></div>
+								</div>
+							</label>
+							<label class="LastnameLabel">Last Name<br/>
+								<div class="LiveHelpInput">
+									<input id="Lastname" type="text"/>
+									<div id="LastnameError" title="Last Name Required" class="sprite InputError"></div>
+								</div>
+							</label>
+							<label class="EmailLabel">Email Address<br/>
+								<div class="LiveHelpInput">
+									<input id="Email" type="email"/>
+									<div id="EmailError" title="Email Address Required" class="sprite InputError"></div>
+								</div>
+							</label>
+							<label class="PasswordLabel">Password<br/>
+								<div class="LiveHelpInput">
+									<input id="Password" type="password"/>
+									<div id="PasswordError" title="Password Required" class="sprite InputError"></div>
+								</div>
+							</label>
+							<label class="RetypePasswordLabel">Retype Password<br/>
+								<div class="LiveHelpInput">
+									<input id="RetypePassword" type="password"/>
+									<div id="RetypePasswordError" title="Retype Password Required" class="sprite InputError"></div>
+								</div>
+							</label>
+						</div>
+					</div>
+					<div id="LiveHelpIntegrated" style="display:none">
+						<div style="margin:15px">Live Help will install as a WHMCS module, the existing WHMCS database will be used for the Live Help installation.  When the Live Chat installation is completed you can login using your WHMCS account.</div>
+					</div>
+					<div id="InstallButton" class="button" style="margin:25px auto">Install</div>
+				</div>
+				<div id="InstallCompleted" style="display:none">
+					<div style="font-family:'Open Sans', sans-serif; padding-top:30px; text-shadow:0 0 2px #ccc; letter-spacing:-1px; font-size:32px; font-weight:700; line-height:35px; color:#999">Live Chat Installed Successfully</div>
+					<div style="margin:15px">You can use the Live Chat buttons below to try the software before you place the Live Help buttons on your web site.</div>
+					<!-- stardevelop.com Live Help International Copyright - All Rights Reserved //-->
+					<!--  BEGIN stardevelop.com Live Help Messenger Code - Copyright - NOT PERMITTED TO MODIFY IMAGE MAP/CODE/LINKS //-->
+					<a href="#" class="LiveHelpButton default"><img src="../locale/en/images/Offline.png" id="LiveHelpStatusDefault" alt="Live Help" class="LiveHelpStatus" style="border:none"/></a>
+					<!--  END stardevelop.com Live Help Messenger Code - Copyright - NOT PERMITTED TO MODIFY IMAGE MAP/CODE/LINKS //-->
+					<!-- stardevelop.com Live Help International Copyright - All Rights Reserved //-->
+					<div style="margin:15px; width:600px">When you are ready to add the Live Chat to your web site, please follow the two steps below.</div>
+					<div style="font-family:'Open Sans', sans-serif; text-align:left; padding-top:30px; text-shadow:0 0 2px #ccc; letter-spacing:-1px; font-size:32px; font-weight:700; line-height:35px; color:#999">Step 1</div>
+					<div style="margin:15px; width:600px; text-align:left">The HTML code below is used to track your site visitors and setup the Live Chat system.  Please insert this code between your &lt;head&gt; and &lt;/head&gt; tags.</div>
+					<div>
+						<pre id="LiveHelpHTMLStep1" class="brush: js; toolbar: false; gutter: false;" style="display:none; color: #999; overflow:auto !important; font-family: 'Monaco', monaco, monospace !important; font-size: 13px !important;">&lt;script type="text/JavaScript" src="/livehelp/scripts/jquery-latest.js"&gt;&lt;/script&gt;
+&lt;script type="text/JavaScript" src="http://www.example.com/livehelp/scripts/jquery-latest.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript"&gt;
+&lt;!--
+    var LiveHelpSettings = {};
+    LiveHelpSettings.server = 'www.example.com';
+    LiveHelpSettings.embedded = true;
+    (function($) { 
+        // JavaScript
+        LiveHelpSettings.server = LiveHelpSettings.server.replace(/[a-z][a-z0-9+\-.]*:\/\/|\/livehelp\/*(\/|[a-z0-9\-._~%!$&amp;'()*+,;=:@\/]*(?![a-z0-9\-._~%!$&amp;'()*+,;=:@]))|\/*$/g, '');
+        var LiveHelp = document.createElement('script'); LiveHelp.type = 'text/javascript'; LiveHelp.async = true;
+        LiveHelp.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + LiveHelpSettings.server + '/livehelp/scripts/jquery.livehelp.min.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(LiveHelp, s);
+    })(jQuery);
+--&gt;
+&lt;/script&gt;</pre>
+					</div>
+					<div style="font-family:'Open Sans', sans-serif; text-align:left; padding-top:30px; text-shadow:0 0 2px #ccc; letter-spacing:-1px; font-size:32px; font-weight:700; line-height:35px; color:#999">Step 2</div>
+					<div style="margin:15px; width:600px; text-align:left">The HTML code below is used to display the Live Help Online / Offline button.  Please place this code where you wish the button to appear.</div>
+					<div style="padding-bottom: 50px">
+						<pre id="LiveHelpHTMLStep2" class="brush: html; toolbar: false; gutter: false;" style="display:none; color: #999; overflow:auto !important; font-family: 'Monaco', monaco, monospace !important; font-size: 13px !important;">&lt;!-- stardevelop.com Live Help International Copyright - All Rights Reserved //--&gt;
+&lt;!--  BEGIN stardevelop.com Live Help Messenger Code - Copyright - NOT PERMITTED TO MODIFY IMAGE MAP/CODE/LINKS //--&gt;
+&lt;a href="#" class="LiveHelpButton default">&lt;img src="http://www.example.com/livehelp/include/status.php" id="LiveHelpStatusDefault" name="LiveHelpStatusDefault" border="0" alt="Live Help" class="LiveHelpStatus"/&gt;&lt;/a&gt;
+&lt;!--  END stardevelop.com Live Help Messenger Code - Copyright - NOT PERMITTED TO MODIFY IMAGE MAP/CODE/LINKS //--&gt;
+&lt;!-- stardevelop.com Live Help International Copyright - All Rights Reserved //--&gt;</pre>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,6 @@
+# Add Cache 
+INSERT INTO `prefix_settings` (`name`, `value`) VALUES ('LastUpdated', NOW());
+ALTER TABLE `prefix_responses` ADD `datetime` DATETIME NOT NULL AFTER `name`;
+
+# iPhone APNS
+ALTER TABLE `prefix_users` ADD `device` TEXT NOT NULL AFTER `department`;
